@@ -1,0 +1,2 @@
+serviceClass: com.pxa.sample.springboot.gwt.client.rpc.RPCRemoteService
+path: 831693191431B2D800D387E140339007.gwt.rpc

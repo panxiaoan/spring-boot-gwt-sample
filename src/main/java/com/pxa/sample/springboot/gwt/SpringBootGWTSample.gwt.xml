@@ -1,0 +1,11 @@
+<module rename-to="www">
+    <source path="client"/>
+    <source path="shared"/>
+
+    <inherits name='com.google.gwt.user.User'/>
+    <inherits name='com.google.gwt.editor.Editor'/>
+    <inherits name='com.google.gwt.logging.Logging'/>
+
+    <entry-point class='com.pxa.sample.springboot.gwt.client.SpringBootGWTSample'/>
+
+</module>
