@@ -14,7 +14,7 @@ import java.util.Map;
 
 /**
  * @author: <a href="mailto:xiaoan.pan@qq.com">潘小安</a>
- * @since: ${YEAR}-${MONTH}-${DAY} ${HOUR}:${MINUTE}
+ * @since: 2018-01-11 19:47
  */
 public class SpringBootGWTSample implements EntryPoint {
     @Override
