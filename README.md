@@ -4,6 +4,7 @@
 
 ## 环境
 - jdk 1.8
+- maven 3.3.9
 - spring-boot 1.5.9
 - gwt 2.8.1
 
