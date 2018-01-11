@@ -8,7 +8,7 @@
 - spring-boot 1.5.9
 - gwt 2.8.1
 
-## GWT 编译
+## 将 Java 编译为 JavaScript，默认已编译
 ```shell
 cd setup
 ./gwt-compile.sh
