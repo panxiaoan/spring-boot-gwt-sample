@@ -8,10 +8,9 @@ import com.sun.deploy.util.SessionState;
 import java.util.Map;
 
 /**
- *
- * @author: <a href="mailto:xiaoan.pan@qq.com">潘小安</a>
- * @since: ${YEAR}-${MONTH}-${DAY} ${HOUR}:${MINUTE}
- */
+ * @author: <a href="mailto:xiaoan.pan@qq.com">潘小安</a>
+ * @since: 2018-01-10 19:06
+ */
 @RemoteServiceRelativePath("rpc/RPCRemoteServiceImpl")
 public interface RPCRemoteService extends RemoteService {
 

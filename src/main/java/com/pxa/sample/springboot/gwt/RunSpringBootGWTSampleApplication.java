@@ -7,9 +7,9 @@ import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 
 /**
- * @author: <a href="mailto:xiaoan.pan@qq.com">潘小安</a>
- * @since: ${YEAR}-${MONTH}-${DAY} ${HOUR}:${MINUTE}
- */
+ * @author: <a href="mailto:xiaoan.pan@qq.com">潘小安</a>
+ * @since: 2018-01-10 19:06
+ */
 @SpringBootApplication
 public class RunSpringBootGWTSampleApplication {
 

@@ -39,8 +39,6 @@ public class SpringBootGWTSample implements EntryPoint {
             public void onClick(ClickEvent event) {
                 String username = usernameUI.getValue();
                 String password = passwordUI.getValue();
-                String value = "您输入的账号：%s, 密码：%s";
-                Window.alert("账号：" + username + ", 密码：" + password);
 
                 Map<String, Object> params = new HashMap<>();
                 params.put("username", username);
