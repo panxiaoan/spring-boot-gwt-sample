@@ -24,5 +24,5 @@ asm=$M2_REPO/org/ow2/asm/asm-all/5.0.4/asm-all-5.0.4.jar
 
 jars=$validation_api:$gwt_user:$gwt_dev:$gwt_codeserver:$asm:$SRC
 
-java -Xms512m -cp $jars com.google.gwt.dev.Compiler -war src/main/resources/static $* com.pxa.sample.springboot.gwt.SpringBootGWTSample
+java -Xms512m -cp $jars com.google.gwt.dev.Compiler -war src/main/resources/static $* com.pxa.sample.SpringBootGWTSample
 

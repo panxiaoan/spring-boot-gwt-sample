@@ -1,3 +1,3 @@
 # Module www
 # RPC service class, partial path of RPC policy file
-com.pxa.sample.springboot.gwt.client.rpc.RPCRemoteService, 831693191431B2D800D387E140339007.gwt.rpc
+com.pxa.sample.client.rpc.RPCRemoteService, CF200815AC844A3568B271C758614F95.gwt.rpc
