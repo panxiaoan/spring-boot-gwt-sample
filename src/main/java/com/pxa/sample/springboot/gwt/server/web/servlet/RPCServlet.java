@@ -1,4 +1,4 @@
-package com.pxa.sample.springboot.gwt.server.web;
+package com.pxa.sample.springboot.gwt.server.web.servlet;
 
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.SerializationException;
