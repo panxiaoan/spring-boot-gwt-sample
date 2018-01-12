@@ -23,3 +23,52 @@ RunSpringBootGWTSampleApplication
 - http://localhost:8080
 - 账号：admin
 - 密码：123
+
+## GWT RPC
+```
+    private void sendRequestByRPC(Map<String, Object> params) {
+        RPCUtil.createRemoteService().execute(params, new AsyncCallback<Map<String, Object>>() {
+            @Override
+            public void onFailure(Throwable caught) {
+                Window.alert(caught.getMessage());
+            }
+
+            @Override
+            public void onSuccess(Map<String, Object> result) {
+                String message = result.get("message").toString();
+                Window.alert(message);
+            }
+        });
+    }
+```
+
+## GWT Ajax
+
+```
+    /**
+     * http://localhost:8080/login
+     */
+    private void sendRequestByAjax(String json) {
+        RequestBuilder requestBuilder = new RequestBuilder(RequestBuilder.POST, GWT.getHostPageBaseURL() + "login");
+        requestBuilder.setHeader("Content-Type", "application/json");
+        try {
+            requestBuilder.sendRequest(json, new RequestCallback() {
+                @Override
+                public void onResponseReceived(Request request, Response response) {
+                    if (response.getStatusCode() == 200) {
+                        Window.alert("login success: " + response.getText());
+                    } else {
+                        Window.alert("login error, status code is: " + response.getStatusCode());
+                    }
+                }
+
+                @Override
+                public void onError(Request request, Throwable exception) {
+                    Window.alert("login error: " + exception.getMessage());
+                }
+            });
+        } catch (RequestException ex) {
+            Window.alert(ex.getMessage());
+        }
+    }
+```
