@@ -43,11 +43,11 @@ RunSpringBootGWTSampleApplication
 ```
 
 ## GWT Ajax
-
+- 需要引入 GWT HTTP 模块：<inherits name="com.google.gwt.http.HTTP" />
 ```java
     /**
-     * http://localhost:8080/login
-     */
+    * http://localhost:8080/login 
+    */
     private void sendRequestByAjax(String json) {
         RequestBuilder requestBuilder = new RequestBuilder(RequestBuilder.POST, GWT.getHostPageBaseURL() + "login");
         requestBuilder.setHeader("Content-Type", "application/json");
