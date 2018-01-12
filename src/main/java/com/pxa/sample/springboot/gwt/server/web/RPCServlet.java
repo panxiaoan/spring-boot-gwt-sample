@@ -1,6 +1,5 @@
 package com.pxa.sample.springboot.gwt.server.web;
 
-import com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.SerializationException;
 import com.google.gwt.user.server.rpc.RPC;
@@ -20,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
  * @author: <a href="mailto:xiaoan.pan@qq.com">潘小安</a>
  * @since: 2018-01-10 19:06
  */
+@WebServlet(urlPatterns = "/www/rpc/*", description = "RPC Servlet")
 public class RPCServlet extends RemoteServiceServlet {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(RPCServlet.class);
