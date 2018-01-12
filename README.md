@@ -25,7 +25,7 @@ RunSpringBootGWTSampleApplication
 - 密码：123
 
 ## GWT RPC
-```
+```java
     private void sendRequestByRPC(Map<String, Object> params) {
         RPCUtil.createRemoteService().execute(params, new AsyncCallback<Map<String, Object>>() {
             @Override
@@ -44,7 +44,7 @@ RunSpringBootGWTSampleApplication
 
 ## GWT Ajax
 
-```
+```java
     /**
      * http://localhost:8080/login
      */
