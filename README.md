@@ -5,7 +5,7 @@
 ## 环境
 - jdk 1.8
 - maven 3.3.9
-- spring-boot 1.5.9
+- spring-boot 2.0.1
 - gwt 2.8.1
 
 ## 将 Java 编译为 JavaScript，默认已编译

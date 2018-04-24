@@ -22,7 +22,9 @@ import javax.servlet.http.HttpServletRequest;
 @WebServlet(name = "rpcDispatcherServlet", urlPatterns = "/www/rpc/*", description = "RPC Servlet")
 public class RPCDispatcherServlet extends RemoteServiceServlet {
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(RPCDispatcherServlet.class);
+	private static final long serialVersionUID = 69875313157158706L;
+
+	private final static Logger LOGGER = LoggerFactory.getLogger(RPCDispatcherServlet.class);
 
     private WebApplicationContext applicationContext = null;
 
