@@ -10,6 +10,6 @@ java -version
 pwd
 
 echo [INFO] Startup APP...
-java -jar target/spring-boot-gwt-sample-0.0.1-SNAPSHOT.jar
+java -jar target/spring-boot-gwt-sample-0.0.1-SNAPSHOT.jar &
 
 
