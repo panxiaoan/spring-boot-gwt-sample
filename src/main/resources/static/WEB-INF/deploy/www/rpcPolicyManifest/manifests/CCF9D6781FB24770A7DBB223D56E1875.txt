@@ -1,2 +1,0 @@
-serviceClass: com.pxa.sample.client.rpc.RPCRemoteService
-path: CF200815AC844A3568B271C758614F95.gwt.rpc

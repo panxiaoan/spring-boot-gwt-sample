@@ -7,6 +7,7 @@
 - maven 3.3.9
 - spring-boot 2.0.1
 - gwt 2.8.1
+- smartgwt 12.0
 
 ## 将 Java 编译为 JavaScript，默认已编译
 ```shell
