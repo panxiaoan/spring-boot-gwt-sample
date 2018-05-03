@@ -2,6 +2,8 @@
 
 <img src="https://github.com/panxiaoan/spring-boot-gwt-sample/blob/master/docs/media/gwt-rpc.png" width="780" height="500" alt="GWT RPC 与 SpringBoot 交互原理图"/>
 
+<img src="https://github.com/panxiaoan/spring-boot-gwt-sample/blob/master/docs/media/sample.png" width="780" height="500" alt="主页"/>
+
 ## 环境
 - jdk 1.8
 - maven 3.3.9
