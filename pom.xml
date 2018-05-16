@@ -5,7 +5,7 @@
 
 	<groupId>com.pxa.sample.springboot.gwt</groupId>
 	<artifactId>spring-boot-gwt-sample</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
 	<name>spring-boot-gwt-sample</name>
