@@ -12,6 +12,6 @@ echo [INFO] Java version
 java -version
 
 echo [INFO] Startup APP...
-nohup java -jar target/spring-boot-gwt-sample-0.0.1-SNAPSHOT.jar > startup.log &
+nohup java -jar target/spring-boot-gwt-sample-0.0.1.jar > spring-boot-gwt-sample.log &
 
 
