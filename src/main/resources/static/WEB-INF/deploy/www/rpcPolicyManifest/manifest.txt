@@ -1,3 +1,2 @@
 # Module www
 # RPC service class, partial path of RPC policy file
-com.pxa.sample.client.rpc.RPCRemoteService, 099B29D25951172984446FF607D27BFF.gwt.rpc
