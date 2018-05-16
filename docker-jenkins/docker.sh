@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /opt
+cd /opt/spring-boot-gwt-sample-docker
 
 BUILD_ID=$1
 COMMIT_ID=$2

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd /opt
+
 CONTAINER_NAME=spring-boot-gwt-sample
 IMAGES_NAME=java/$CONTAINER_NAME
 
