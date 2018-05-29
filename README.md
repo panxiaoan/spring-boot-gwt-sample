@@ -1,8 +1,8 @@
 # Spring Boot GWT Sample
 
-<img src="https://github.com/panxiaoan/spring-boot-gwt-sample/blob/master/docs/media/gwt-rpc.png" width="350" height="250" alt="GWT RPC 与 SpringBoot 交互原理图"/>
+<img src="https://github.com/panxiaoan/spring-boot-gwt-sample/blob/master/docs/media/gwt-rpc.png" width="600" height="350" alt="GWT RPC 与 SpringBoot 交互原理图"/>
 
-<img src="https://github.com/panxiaoan/spring-boot-gwt-sample/blob/master/docs/media/sample.png" width="350" height="250" alt="主页"/>
+<img src="https://github.com/panxiaoan/spring-boot-gwt-sample/blob/master/docs/media/sample.png" width="600" height="350" alt="主页"/>
 
 ## 环境
 - jdk 1.8
