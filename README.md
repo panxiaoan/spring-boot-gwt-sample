@@ -13,6 +13,13 @@
 - gwt 2.8.1
 - smartgwt 12.0
 
+## 演示场景
+- spring-boot 常用功能
+- gwt 常用功能
+- 与 jenkins 整合
+- 与 jenkins & docker 整合
+- 与 jenkins & docker & kubernetes 整合
+
 ## 将 Java 编译为 JavaScript，默认已编译
 ```shell
 cd setup
