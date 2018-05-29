@@ -7,7 +7,9 @@
 ## 环境
 - jdk 1.8
 - maven 3.3.9
-- spring-boot 2.0.1
+
+## 依赖框架
+- spring-boot 2.0.2
 - gwt 2.8.1
 - smartgwt 12.0
 

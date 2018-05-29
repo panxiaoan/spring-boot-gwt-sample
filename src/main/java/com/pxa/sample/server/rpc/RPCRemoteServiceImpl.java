@@ -28,6 +28,8 @@ public class RPCRemoteServiceImpl implements RPCRemoteService {
         } else {
             throw new ClientException("账号或者密码错误，请重新输入");
         }
+        
+        System.err.println(resultMap.toString());
 
         return resultMap;
     }
