@@ -1,13 +1,16 @@
 package com.pxa.sample.server.rpc;
 
-import com.pxa.sample.client.exception.ClientException;
-import com.pxa.sample.client.rpc.RPCRemoteService;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.pxa.sample.client.exception.ClientException;
+import com.pxa.sample.client.rpc.RPCRemoteService;
 
 /**
  * @author: <a href="mailto:xiaoan.pan@qq.com">潘小安</a>
@@ -16,6 +19,9 @@ import java.util.Map;
 @Service("RPCRemoteServiceImpl")
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class RPCRemoteServiceImpl implements RPCRemoteService {
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(RPCRemoteServiceImpl.class);
+	
     @Override
     public Map execute(Map<String, Object> params) throws ClientException {
         Map<String, Object> resultMap = new HashMap<>();
@@ -29,7 +35,7 @@ public class RPCRemoteServiceImpl implements RPCRemoteService {
             throw new ClientException("账号或者密码错误，请重新输入");
         }
         
-        System.err.println(resultMap.toString());
+        LOGGER.info(">>> rpc request message: " + resultMap.toString());
 
         return resultMap;
     }
