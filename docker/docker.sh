@@ -2,8 +2,9 @@
 
 CONTAINER_NAME=spring-boot-gwt-sample
 IMAGES_NAME=java/$CONTAINER_NAME
+JAR_VERSION=1.0.2
 
-FILENAME=$(find -name spring-boot-gwt-sample-**.jar)
+FILENAME=$(find -name spring-boot-gwt-sample-$JAR_VERSION.jar)
 JARNAME=${FILENAME##*/}
 chmod  777 $JARNAME
 
