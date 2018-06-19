@@ -37,7 +37,13 @@ else
 fi
 
 # 构建容器
-docker build --build-arg app=$JARNAME .  -t  $IMAGES_NAME:$BUILD_ID
+docker build --build-arg app=$JARNAME . -t $IMAGES_NAME:$BUILD_ID
  
 # 运行容器
-docker run -d -p 8080:8080 --name $CONTAINER_NAME  $IMAGES_NAME:$BUILD_ID
+docker run -d -p 8080:8080 --name $CONTAINER_NAME $IMAGES_NAME:$BUILD_ID
+
+# 提交到 Docker Hub, docker commit <container-name> <hub-user>/<repo-name>[:<tag>]
+docker commit $CONTAINER_NAME panxiaoan/$CONTAINER_NAME:$BUILD_ID
+
+# 推送到 Docker Hub, docker push <hub-user>/<repo-name>:<tag>
+docker push panxiaoan/$CONTAINER_NAME:$BUILD_ID
