@@ -38,17 +38,17 @@ else
 fi
 
 # 构建容器
-echo "docker build……"
+echo -e "\033[32m docker build…… \033[0m"
 docker build --build-arg app=$JARNAME . -t $IMAGES_NAME:$BUILD_ID
  
 # 运行容器
-echo "docker run……"
+echo -e "\033[32m docker run…… \033[0m"
 docker run -d -p 8080:8080 --name $CONTAINER_NAME $IMAGES_NAME:$BUILD_ID
 
 # 提交到 Docker Hub, docker commit <container-name> <hub-user>/<repo-name>[:<tag>]
-echo "docker commit……"
+echo -e "\033[32m docker commit…… \033[0m"
 docker commit $CONTAINER_NAME panxiaoan/$CONTAINER_NAME:$BUILD_ID
 
 # 推送到 Docker Hub, docker push <hub-user>/<repo-name>:<tag>
-echo "docker push……"
+echo -e "\033[32m docker push…… \033[0m"
 docker push panxiaoan/$CONTAINER_NAME:$BUILD_ID
