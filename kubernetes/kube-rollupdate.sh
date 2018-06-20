@@ -4,5 +4,5 @@ cd /opt/spring-boot-gwt-sample-docker
 
 BUILD_ID=$1
 
-echo -e "\033[32m rollup deployment…… \033[0m"
+echo -e "rollup deployment……"
 kubectl set image deployment/springbootgwtsample springbootgwtsample=panxiaoan/spring-boot-gwt-sample:$BUILD_ID --namespace=default
