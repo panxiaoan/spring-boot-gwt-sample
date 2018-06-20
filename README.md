@@ -11,7 +11,6 @@
 ## 依赖框架
 - spring-boot 2.0.2
 - gwt 2.8.1
-- smartgwt 12.0
 
 ## 演示场景
 - spring-boot 常用功能
