@@ -1,4 +1,4 @@
-# 基础镜像
+# 基础镜像，从时速云构建 https://hub.tenxcloud.com
 FROM index.tenxcloud.com/tenxcloud/java:8
 
 # 作者

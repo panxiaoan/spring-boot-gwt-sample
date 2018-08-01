@@ -1,0 +1,6 @@
+server:
+  port: 8080
+  compression:
+    enabled: true
+    min-response-size: 64
+    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/json,application/xml,application/javascript

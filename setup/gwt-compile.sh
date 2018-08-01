@@ -3,7 +3,7 @@
 export JAVA_HOME=$JAVA8_HOME
 export CLASSPATH=.:$JAVA_HOME/lib
 export PATH=$JAVA_HOME/bin:$PATH
-export JAVA_OPTS='-server -Xms1200m -Xmx1500m'
+export JAVA_OPTS='-server -Xms1g -Xmx1g'
 
 java -version
 
@@ -23,9 +23,7 @@ gwt_codeserver=$GWT_HOME/gwt-codeserver/2.8.1/gwt-codeserver-2.8.1.jar
 SMARTGWT_HOME=$M2_REPO/com/isomorphic/smartgwt/lgpl
 smartgwt=$SMARTGWT_HOME/smartgwt-lgpl/12.0/smartgwt-lgpl-12.0.jar
 
-asm=$M2_REPO/org/ow2/asm/asm-all/5.0.4/asm-all-5.0.4.jar
+jars=$validation_api:$gwt_user:$gwt_dev:$gwt_codeserver:$smartgwt:$SRC
 
-jars=$validation_api:$gwt_user:$gwt_dev:$gwt_codeserver:$smartgwt:$asm:$SRC
-
-java -Xms512m -cp $jars com.google.gwt.dev.Compiler -war src/main/resources/static $* com.pxa.sample.SpringBootGWTSample
+java -server -Xms1g -Xmx1g -cp $jars com.google.gwt.dev.Compiler -war src/main/resources/static $* com.pxa.sample.SpringBootGWTSample
 
