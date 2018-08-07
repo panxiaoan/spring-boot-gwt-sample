@@ -14,6 +14,10 @@ import com.google.gwt.json.client.JSONString;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.pxa.sample.client.SpringBootGWTSample;
 import com.pxa.sample.client.rpc.RPCUtil;
+import com.smartgwt.client.rpc.RPCCallback;
+import com.smartgwt.client.rpc.RPCManager;
+import com.smartgwt.client.rpc.RPCRequest;
+import com.smartgwt.client.rpc.RPCResponse;
 import com.smartgwt.client.types.Alignment;
 import com.smartgwt.client.types.Overflow;
 import com.smartgwt.client.util.SC;
@@ -67,7 +71,7 @@ public class CenterPage extends VLayout {
 
 		this.drawIndexTab();
 	}
-	
+
 	public void addTab(AbstractPage page) {
 		Tab tab = this.tabSet.getTab(page.getPageId());
 		if (tab != null) {
@@ -150,17 +154,21 @@ public class CenterPage extends VLayout {
 		});
 		btnLayout.addMember(rpcLoginBtn);
 
-		IButton ajaxLoginBtn = new IButton("Ajax Login");
-		ajaxLoginBtn.addClickHandler(new ClickHandler() {
+		IButton gwtLoginBtn = new IButton("GWT Rest Login");
+		gwtLoginBtn.addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent event) {
-				Map<String, Object> params = getFormData();
-				JSONObject jsonObject = new JSONObject();
-				jsonObject.put("username", new JSONString(params.get("username").toString()));
-				jsonObject.put("password", new JSONString(params.get("password").toString()));
-				sendRequestByAjax(jsonObject.toString());
+				sendHttpRequestByGWT(getFormJsonData());
 			}
 		});
-		btnLayout.addMember(ajaxLoginBtn);
+		btnLayout.addMember(gwtLoginBtn);
+		
+		IButton smartgwtLoginBtn = new IButton("SmartGWT Rest Login");
+		smartgwtLoginBtn.addClickHandler(new ClickHandler() {
+			public void onClick(ClickEvent event) {
+				sendHttpRequestBySmartGWT(getFormJsonData());
+			}
+		});
+		btnLayout.addMember(smartgwtLoginBtn);
 
 		container.addMember(topLayout);
 		container.addMember(centerLayout);
@@ -178,6 +186,14 @@ public class CenterPage extends VLayout {
 		params.put("password", password);
 		return params;
 	}
+	
+	private String getFormJsonData() {
+		Map<String, Object> params = getFormData();
+		JSONObject jsonObject = new JSONObject();
+		jsonObject.put("username", new JSONString(params.get("username").toString()));
+		jsonObject.put("password", new JSONString(params.get("password").toString()));
+		return jsonObject.toString();
+	}
 
 	private void sendRequestByRPC(Map<String, Object> params) {
 		RPCUtil.createRemoteService().execute(params, new AsyncCallback<Map<String, Object>>() {
@@ -194,8 +210,11 @@ public class CenterPage extends VLayout {
 		});
 	}
 
-	private void sendRequestByAjax(String json) {
-		RequestBuilder requestBuilder = new RequestBuilder(RequestBuilder.POST, GWT.getHostPageBaseURL() + "login");
+	private void sendHttpRequestByGWT(String json) {
+		String actionUrl = GWT.getHostPageBaseURL() + "login";
+
+		// GWT Http
+		RequestBuilder requestBuilder = new RequestBuilder(RequestBuilder.POST, actionUrl);
 		requestBuilder.setHeader("Content-Type", "application/json");
 		try {
 			requestBuilder.sendRequest(json, new RequestCallback() {
@@ -216,5 +235,24 @@ public class CenterPage extends VLayout {
 		} catch (RequestException ex) {
 			SC.say(ex.getMessage());
 		}
+	}
+
+	private void sendHttpRequestBySmartGWT(String json) {
+		// SmartGWT Http
+		String actionUrl = GWT.getHostPageBaseURL() + "rpcLogin";
+		
+		RPCRequest request = new RPCRequest();
+		request.setUseSimpleHttp(true);
+		request.setContentType("application/json");
+		request.setHttpMethod("POST");
+		request.setActionURL(actionUrl);
+		request.setData(json);
+		
+		RPCManager.sendRequest(request, new RPCCallback() {
+			@Override
+			public void execute(RPCResponse response, Object rawData, RPCRequest request) {
+				SC.say(rawData.toString());
+			}
+		});
 	}
 }

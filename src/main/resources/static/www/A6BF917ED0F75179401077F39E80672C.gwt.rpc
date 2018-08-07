@@ -98,6 +98,7 @@ com.google.gwt.xhr.client.XMLHttpRequest$ResponseType, true, true, false, false,
 com.google.gwt.xml.client.DOMException, true, false, false, false, com.google.gwt.xml.client.DOMException/4182906963, 4182906963
 com.google.gwt.xml.client.impl.DOMParseException, true, true, false, false, com.google.gwt.xml.client.impl.DOMParseException/3799120635, 3799120635
 com.google.web.bindery.event.shared.UmbrellaException, true, true, false, false, com.google.web.bindery.event.shared.UmbrellaException/1025846929, 1025846929
+com.pxa.sample.client.RestResult, true, true, false, false, com.pxa.sample.client.RestResult/1200386722, 1200386722
 com.pxa.sample.client.exception.ClientException, true, true, false, false, com.pxa.sample.client.exception.ClientException/1814705395, 1814705395
 com.pxa.sample.client.rpc.RPCRemoteService, false, false, false, false, _, 4115941056
 com.smartgwt.client.bean.BeanProperty$NoSetterException, true, true, false, false, com.smartgwt.client.bean.BeanProperty$NoSetterException/1693950500, 1693950500

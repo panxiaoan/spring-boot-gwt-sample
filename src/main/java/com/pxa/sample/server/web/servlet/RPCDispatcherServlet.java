@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
  * @author: <a href="mailto:xiaoan.pan@qq.com">潘小安</a>
  * @since: 2018-01-10 19:06
  */
-@WebServlet(name = "rpcDispatcherServlet", urlPatterns = "/www/rpc/*", description = "RPC Servlet")
+@WebServlet(name = "RPCDispatcherServlet", urlPatterns = "/www/rpc/*", description = "RPCDispatcherServlet")
 public class RPCDispatcherServlet extends RemoteServiceServlet {
 
 	private static final long serialVersionUID = 69875313157158706L;

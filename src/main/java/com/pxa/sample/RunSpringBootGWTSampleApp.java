@@ -12,14 +12,14 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
  */
 @SpringBootApplication
 @ServletComponentScan
-public class RunSpringBootGWTSampleApplication extends SpringBootServletInitializer {
+public class RunSpringBootGWTSampleApp extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RunSpringBootGWTSampleApplication.class, args);
+		SpringApplication.run(RunSpringBootGWTSampleApp.class, args);
 	}
 	
 	@Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-        return builder.sources(RunSpringBootGWTSampleApplication.class);
+        return builder.sources(RunSpringBootGWTSampleApp.class);
     }
 }
