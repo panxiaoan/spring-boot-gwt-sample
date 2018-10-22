@@ -45,7 +45,7 @@ docker build --build-arg app=$JARNAME . -t $IMAGES_NAME:$BUILD_ID
 echo -e "docker run……"
 docker run -d -p 8080:8080 --name $CONTAINER_NAME $IMAGES_NAME:$BUILD_ID
 
-# 提交到 Docker Hub, docker commit <container-name> <hub-user>/<repo-name>[:<tag>]
+# 从容器创建一个新的镜像, docker commit <container-name> <hub-user>/<repo-name>[:<tag>]
 echo -e "docker commit……"
 docker commit $CONTAINER_NAME panxiaoan/$CONTAINER_NAME:$BUILD_ID
 

@@ -1,0 +1,8 @@
+info:
+  appName: spring-boot-gwt-sample-test
+server:
+  port: 8080
+  compression:
+    enabled: true
+    min-response-size: 2048
+    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/json,application/xml,application/javascript,image/png

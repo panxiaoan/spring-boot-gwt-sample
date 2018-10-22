@@ -17,9 +17,9 @@ public class RunSpringBootGWTSampleApp extends SpringBootServletInitializer {
 	public static void main(String[] args) {
 		SpringApplication.run(RunSpringBootGWTSampleApp.class, args);
 	}
-	
+
 	@Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-        return builder.sources(RunSpringBootGWTSampleApp.class);
-    }
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+		return builder.sources(RunSpringBootGWTSampleApp.class);
+	}
 }
