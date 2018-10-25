@@ -1,12 +1,11 @@
 package com.pxa.sample;
 
+import com.pxa.sample.server.service.LocationService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import com.pxa.sample.server.service.LocationService;
 
 /** 
  * @author <a href="mailto:xiaoan.pan@qq.com">潘小安</a> 
@@ -22,6 +21,7 @@ public class LocationServiceTest {
 	@Test
 	public void contextLoads() {
 //		locationService.init();
-		locationService.query();
+        //		locationService.query();
+        locationService.load();
 	}
 }

@@ -1,15 +1,15 @@
 package com.pxa.sample.server.service;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import com.pxa.sample.server.model.entity.City;
 import com.pxa.sample.server.model.entity.Province;
 import com.pxa.sample.server.repository.CityRepository;
 import com.pxa.sample.server.repository.ProvinceRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.Optional;
 
 /** 
  * @author <a href="mailto:xiaoan.pan@qq.com">潘小安</a> 
@@ -68,5 +68,9 @@ public class LocationService {
 			System.err.println(row.toString());
 		}
 	}
+
+    public void load() {
+        Optional<Province> province = provinceRepository.findById(1L);
+    }
 	
 }
