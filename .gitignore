@@ -4,6 +4,7 @@ target/
 temp
 deploy
 gwt-unitCache
+www
 
 ### STS ###
 .apt_generated
