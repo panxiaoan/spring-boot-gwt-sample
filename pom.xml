@@ -18,10 +18,25 @@
 		<relativePath />
 	</parent>
 
+    <developers>
+        <developer>
+            <id>panxiaoan</id>
+            <name>潘小安</name>
+            <email>xiaoan.pan@qq.com</email>
+            <organization>Personal</organization>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <timezone>+8</timezone>
+        </developer>
+    </developers>
+
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
 		
 		<gwt.version>2.8.1</gwt.version>
 		<smartgwt.version>12.0</smartgwt.version>
