@@ -1,16 +1,14 @@
 package com.pxa.sample.server.rpc;
 
+import com.pxa.sample.client.exception.ClientException;
+import com.pxa.sample.client.rpc.RPCRemoteService;
 import java.util.HashMap;
 import java.util.Map;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
-
-import com.pxa.sample.client.exception.ClientException;
-import com.pxa.sample.client.rpc.RPCRemoteService;
 
 /**
  * @author: <a href="mailto:xiaoan.pan@qq.com">潘小安</a>
@@ -36,6 +34,8 @@ public class RPCRemoteServiceImpl implements RPCRemoteService {
         }
         
         LOGGER.info(">>> rpc request message: " + resultMap.toString());
+
+        LOGGER.info("嘻嘻");
 
         return resultMap;
     }

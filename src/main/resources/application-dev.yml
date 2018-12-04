@@ -22,3 +22,6 @@ spring:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
   thymeleaf:
     cache: false
+  devtools:
+    restart:
+      enabled: true

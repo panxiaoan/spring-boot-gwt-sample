@@ -8,7 +8,7 @@ export JAVA_OPTS='-server -Xms1g -Xmx1g'
 java -version
 
 cd ..
-pwd
+echo "[INFO] >>> current workspace: " pwd
 
 echo [INFO] Start GWT compile to JavaScript...
 

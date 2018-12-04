@@ -74,6 +74,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jetty</artifactId>
 		</dependency>
+		<!-- 热更新，便于开发调试 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
 		
 		<!-- MySQL -->
 		<dependency>
@@ -150,6 +156,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<excludeArtifactIds>gwt-dev</excludeArtifactIds>
+					<fork>true</fork>
 				</configuration>
 				<executions>
 					<execution>
