@@ -5,6 +5,7 @@ temp
 deploy
 gwt-unitCache
 www
+WEB-INF.deploy.www
 
 ### STS ###
 .apt_generated
