@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.pxa.sample.springboot.gwt</groupId>
-	<artifactId>spring-boot-gwt-sample</artifactId>
-	<version>1.0.2</version>
-	<packaging>jar</packaging>
+    <groupId>com.pxa.sample.springboot.gwt</groupId>
+    <artifactId>spring-boot-gwt-sample</artifactId>
+    <version>2.0.0</version>
+    <packaging>jar</packaging>
 
-	<name>spring-boot-gwt-sample</name>
-	<description>Spring Boot GWT Sample</description>
+    <name>spring-boot-gwt-sample</name>
+    <description>Spring Boot GWT Sample</description>
 
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.3.RELEASE</version>
-		<relativePath />
-	</parent>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.6.RELEASE</version>
+        <relativePath/>
+    </parent>
 
     <developers>
         <developer>
@@ -31,150 +31,218 @@
         </developer>
     </developers>
 
-	<properties>
+    <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-		
-		<gwt.version>2.8.1</gwt.version>
-		<smartgwt.version>12.0</smartgwt.version>
-	</properties>
+        <java.version>11</java.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
 
-	<repositories>
-		<repository>
-			<id>nexus</id>
-			<name>nexus</name>
-			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
+        <gwt.version>2.10.0</gwt.version>
+        <smartgwt.version>13.0-p20230412</smartgwt.version>
+    </properties>
 
-	<dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.gwtproject</groupId>
+                <artifactId>gwt</artifactId>
+                <version>${gwt.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
-		<!-- Spring Boot -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-tomcat</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jetty</artifactId>
-		</dependency>
-		<!-- 热更新，便于开发调试 -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<optional>true</optional>
-		</dependency>
-		
-		<!-- MySQL -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-		</dependency>
+    <dependencies>
 
-		<dependency>
-			<groupId>com.google.gwt</groupId>
-			<artifactId>gwt-servlet</artifactId>
-			<version>${gwt.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.google.gwt</groupId>
-			<artifactId>gwt-user</artifactId>
-			<version>${gwt.version}</version>
-			<scope>provided</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>*</groupId>
-					<artifactId>*</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>com.google.gwt</groupId>
-			<artifactId>gwt-dev</artifactId>
-			<version>${gwt.version}</version>
-			<scope>provided</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>*</groupId>
-					<artifactId>*</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
+        <!-- Spring Boot -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jetty</artifactId>
+        </dependency>
+        <!-- 热更新，便于开发调试 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
 
-		<dependency>
-			<groupId>com.isomorphic.smartgwt.lgpl</groupId>
-			<artifactId>smartgwt-lgpl</artifactId>
-			<version>${smartgwt.version}</version>
-		</dependency>
+        <!-- MySQL -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.24</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+        <!-- SmartGWT -->
+        <dependency>
+            <groupId>com.isomorphic.smartgwt.lgpl</groupId>
+            <artifactId>smartgwt-lgpl</artifactId>
+            <version>${smartgwt.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.isomorphic.smartgwt.lgpl</groupId>
+            <artifactId>smartgwt-skins</artifactId>
+            <version>${smartgwt.version}</version>
+        </dependency>
 
-	<build>
-		<resources>
-			<resource>
-				<directory>src/main/java</directory>
-				<includes>
-					<include>**/client/**/*.java</include>
-					<include>**/public/**/*.*</include>
-					<include>**/*.xml</include>
-					<include>**/*.xsd</include>
-				</includes>
-			</resource>
-			<resource>
-				<directory>src/main/resources</directory>
-				<includes>
-					<include>**/*.*</include>
-				</includes>
-			</resource>
-		</resources>
+        <!-- GWT -->
+        <dependency>
+            <groupId>org.gwtproject</groupId>
+            <artifactId>gwt-servlet</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.gwtproject</groupId>
+            <artifactId>gwt-user</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.gwtproject</groupId>
+            <artifactId>gwt-dev</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.gwtproject</groupId>
+            <artifactId>gwt-codeserver</artifactId>
+            <scope>test</scope>
+        </dependency>
 
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<excludeArtifactIds>gwt-dev</excludeArtifactIds>
-					<fork>true</fork>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+        <!-- GWT Required -->
+        <dependency>
+            <groupId>colt</groupId>
+            <artifactId>colt</artifactId>
+            <version>1.2.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm</artifactId>
+            <version>9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-commons</artifactId>
+            <version>9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-util</artifactId>
+            <version>9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.0.0.GA</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.0.0.GA</version>
+            <classifier>sources</classifier>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- Test -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/client/**/*.java</include>
+                    <include>**/public/**/*.*</include>
+                    <include>**/*.xml</include>
+                    <include>**/*.xsd</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludeGroupIds>gwt-dev</excludeGroupIds>
+                    <fork>true</fork>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+
+            <!-- GWT Maven Plugin https://tbroyer.github.io/gwt-maven-plugin/migrating.html -->
+            <plugin>
+                <groupId>net.ltgt.gwt.maven</groupId>
+                <artifactId>gwt-maven-plugin</artifactId>
+                <version>1.0.1</version>
+                <extensions>true</extensions>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <sourceLevel>11</sourceLevel>
+                    <jvmArgs>
+                        <arg>-server</arg>
+                        <arg>-Xms1g</arg>
+                        <arg>-Xmx1g</arg>
+                    </jvmArgs>
+                    <compilerArgs>
+                        <arg>-compileReport</arg>
+                    </compilerArgs>
+                    <failOnError>true</failOnError>
+
+                    <moduleName>com.pxa.sample.SpringBootGWTSample</moduleName>
+                    <webappDirectory>src/main/resources/static</webappDirectory>
+                    <startupUrls>
+                        <startupUrl>index.html</startupUrl>
+                    </startupUrls>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
