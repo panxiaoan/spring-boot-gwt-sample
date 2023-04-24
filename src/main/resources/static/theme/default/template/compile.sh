@@ -1,2 +1,2 @@
 #!/bin/sh
-python compileSkin.py
+python3 compileSkin.py

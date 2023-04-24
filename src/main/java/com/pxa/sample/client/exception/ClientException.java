@@ -3,8 +3,8 @@ package com.pxa.sample.client.exception;
 import com.google.gwt.user.client.rpc.IsSerializable;
 
 /**
- * @author: <a href="mailto:xiaoan.pan@qq.com">潘小安</a>
- * @since: 2018-01-10 18:50
+ * @author <a href="mailto:xiaoan.pan@qq.com">潘小安</a>
+ * @since 2018-01-10 18:50
  */
 public class ClientException extends RuntimeException implements IsSerializable {
 

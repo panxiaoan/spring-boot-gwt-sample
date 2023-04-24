@@ -4,5 +4,32 @@ server:
   port: 8080
   compression:
     enabled: true
-    min-response-size: 2048
+    min-response-size: 1024
     mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/json,application/xml,application/javascript,image/png
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring-boot-sample?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+    hikari:
+      maxLifetime: 1765000
+      maximumPoolSize: 15
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  thymeleaf:
+    cache: false
+  devtools:
+    restart:
+      enabled: true
+logging:
+  pattern:
+    console: "%clr(%d{MM/dd HH:mm:ss.SSS}){faint} %clr(%-5level) %clr(${PID:- }){magenta} %clr([%thread]){faint} %clr(---){faint} %cyan([%logger{50}.%method\\(%line\\)]) - %msg%n"
+    file: "%clr(%d{MM/dd HH:mm:ss.SSS}){faint} %clr(%-5level) %clr(${PID:- }){magenta} %clr([%thread]){faint} %clr(---){faint} %cyan([%logger{50}.%method\\(%line\\)]) - %msg%n"
+  level:
+    ROOT: info
+  file:
+    name: ../temp/spring-boot-gwt-sample.log

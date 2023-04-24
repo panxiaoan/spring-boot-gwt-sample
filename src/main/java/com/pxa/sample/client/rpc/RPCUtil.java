@@ -3,8 +3,8 @@ package com.pxa.sample.client.rpc;
 import com.google.gwt.core.client.GWT;
 
 /**
- * @author: <a href="mailto:xiaoan.pan@qq.com">潘小安</a>
- * @since: 2018-01-10 18:54
+ * @author <a href="mailto:xiaoan.pan@qq.com">潘小安</a>
+ * @since 2018-01-10 18:54
  */
 public class RPCUtil {
 

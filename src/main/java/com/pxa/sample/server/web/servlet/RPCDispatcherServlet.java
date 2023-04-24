@@ -16,15 +16,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @author: <a href="mailto:xiaoan.pan@qq.com">潘小安</a>
- * @since: 2018-01-10 19:06
+ * @author <a href="mailto:xiaoan.pan@qq.com">潘小安</a>
+ * @since 2018-01-10 19:06
  */
 @WebServlet(name = "RPCDispatcherServlet", urlPatterns = "/www/rpc/*", description = "RPCDispatcherServlet")
 public class RPCDispatcherServlet extends RemoteServiceServlet {
 
-	private static final long serialVersionUID = 69875313157158706L;
+    private static final long serialVersionUID = 69875313157158706L;
 
-	private final static Logger LOGGER = LoggerFactory.getLogger(RPCDispatcherServlet.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(RPCDispatcherServlet.class);
 
     private WebApplicationContext applicationContext = null;
 

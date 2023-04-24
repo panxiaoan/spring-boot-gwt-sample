@@ -28,7 +28,7 @@
 
 ```shell
 cd setup
-./gwt-compile.sh
+./mvn-gwt-compile.sh
 ```
 
 ## 运行
@@ -42,3 +42,8 @@ RunSpringBootGWTSampleApplication
 - http://localhost:8080
 - 账号：admin
 - 密码：123
+
+## 其他
+
+- How TO relogin with SpringSecurity 3.0
+  https://forums.smartclient.com/forum/smart-gwt-technical-q-a/9888-how-to-relogin-with-springsecurity-3-0?t=9633

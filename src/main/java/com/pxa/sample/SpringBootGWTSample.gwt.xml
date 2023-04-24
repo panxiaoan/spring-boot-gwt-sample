@@ -1,17 +1,20 @@
 <module rename-to="www">
 
     <inherits name='com.google.gwt.user.User'/>
-    <inherits name="com.google.gwt.http.HTTP" />
+    <inherits name="com.google.gwt.http.HTTP"/>
     <inherits name='com.google.gwt.logging.Logging'/>
-    
+
     <inherits name="com.smartgwt.SmartGwtNoScript"/>
     <inherits name="com.smartgwt.DrawingNoScript"/>
-    <inherits name="com.smartgwt.tools.SmartGwtTools"/>
-    
+    <inherits name="com.smartgwt.tools.SmartGwtToolsNoTheme"/>
+
     <inherits name="com.smartclient.theme.stratus.StratusResources"/>
     <inherits name="com.smartclient.theme.tahoe.TahoeResources"/>
-    
+
     <extend-property name="locale" values="zh_CN"/>
+
+    <!-- "ie6", "ie8", "gecko1_8", "safari", "opera", "ie9", "ie10" -->
+    <set-property name="user.agent" value="safari"/>
 
     <entry-point class='com.pxa.sample.client.SpringBootGWTSample'/>
 

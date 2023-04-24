@@ -7,8 +7,8 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 /**
- * @author: <a href="mailto:xiaoan.pan@qq.com">潘小安</a>
- * @since: 2018-01-10 19:06
+ * @author <a href="mailto:xiaoan.pan@qq.com">潘小安</a>
+ * @since 2018-01-10 19:06
  */
 @SpringBootApplication
 @ServletComponentScan
