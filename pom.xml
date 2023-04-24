@@ -147,39 +147,6 @@
             <version>3.8.9.Final</version>
         </dependency>
 
-        <!-- GWT Required -->
-        <!--        <dependency>-->
-        <!--            <groupId>org.ow2.asm</groupId>-->
-        <!--            <artifactId>asm</artifactId>-->
-        <!--            <version>9.2</version>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.ow2.asm</groupId>-->
-        <!--            <artifactId>asm-commons</artifactId>-->
-        <!--            <version>9.2</version>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.ow2.asm</groupId>-->
-        <!--            <artifactId>asm-util</artifactId>-->
-        <!--            <version>9.2</version>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>javax.validation</groupId>-->
-        <!--            <artifactId>validation-api</artifactId>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>javax.validation</groupId>-->
-        <!--            <artifactId>validation-api</artifactId>-->
-        <!--            <classifier>sources</classifier>-->
-        <!--            <scope>provided</scope>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>colt</groupId>-->
-        <!--            <artifactId>colt</artifactId>-->
-        <!--            <version>1.2.0</version>-->
-        <!--            <scope>compile</scope>-->
-        <!--        </dependency>-->
-
         <!-- MySQL -->
         <dependency>
             <groupId>com.mysql</groupId>
