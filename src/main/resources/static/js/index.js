@@ -19,9 +19,15 @@ document.write('<script src="www/sc/modules/ISC_Drawing.js?version=' + iscVersio
 var currentSkin = readCookie('smartgwt_skin');
 if (currentSkin == null) {
     // currentSkin = isc.Browser.defaultSkin;
-    currentSkin = "Stratus";
+//    currentSkin = "Stratus";
+    currentSkin = "Default";
 }
-document.write('<script src="www/sc/skins/' + currentSkin + '/load_skin.js?version=' + iscVersion + '"></script>');
+
+if (currentSkin == "Default") {
+    document.write('<script src="theme/' + currentSkin + '/load_skin.js?version=' + iscVersion + '"></script>');
+} else {
+    document.write('<script src="www/sc/skins/' + currentSkin + '/load_skin.js?version=' + iscVersion + '"></script>');
+}
 
 // Font ICON
 var fontAwesomeVersion = "5.1.1";

@@ -1,70 +1,6 @@
-@charset "UTF-8";
-/*============================================================
-This CSS file is generated from the Flat series of skins
-
-DO NOT edit this .css file directly unless renamed, since 
-future compass compiles will overwrite it.
-==============================================================*/
-/* This file is loaded by browsers, but also passed to the SmartClient server, which uses the
-   "Flying Saucer" JAR to export a page in PDF format.  Therefore, we must declare @font-face in
-   way that's compatible with both use cases, and as optimal as possible for all browsers.
-   
-   Multiple src: declarations can be made in a single #font-face declaration, but only the last
-   one that can be parsed will take effect.  The src: declarations aren't merged and the browser
-   doesn't even check font format support when choosing a src: line - it just uses the last one
-   that can be parsed.
-
-   We can list multiple font formats and their corresponding font files in a single src:
-   declaration, but that's not supported by IE8, or by the "Flying Saucer" JAR.  So the
-   approach taken below is:
-   - We want IE8 to load eot fonts, because that's all that it supports, but we don't want
-     "Flying Saucer" JAR to attempt to load eot fonts.  So add a ttf/otf font as the first
-     src: declaration, and then the eot font second with a trailing \9; that trailing magic
-     means that line can only be loaded by IE7-9.  (IE9 can parse the final src: declaration
-     containing local() so it won't attempt to load the eot font.)
-   - The final src: declaration will list various font resources in the order that we'd like
-     them used.  Browsers will use the first one in that list that they support.  All supported
-     browsers but IE8 and the "Flying Saucer" JAR on the server should parse and load this
-     final declaration.  It's ordered to put woff2/woff fonts first as they're smaller files.
-
-   https://www.w3schools.com/cssref/css3_pr_font-face_rule.asp
-   https://www.paulirish.com/2010/font-face-gotchas/#smiley
-   http://stackoverflow.com/questions/8004765/css-9-in-width-property
-   https://msdn.microsoft.com/en-us/library/ms530757(v=vs.85).aspx
-
-   *** IMPORTANT when adding/removing @font-face declarations ***
-   The set of font families declared below in @font-face declarations MUST match those passed
-   to Fontloader.loadCustomFonts() near the bottom of load_skin.js, or a bug will be created:
-   - If a new @font-face declaration is added here, but the font family not added in
-     load_skin.js, then the loading of that font won't be tracked and canvii sizes may be wrong.
-   - If a @font-face declaration is removed here, but the font family not removed from
-     load_skin.js, we'll try to load it and fail, which may delay the size correction logic for
-     the remaining @font-face fonts until FontLoader times out and reports a load failure.
-*/
-@font-face {
-  font-family: 'RobotoLight';
-  /* see comment on @font-face above */
-  src: url("fonts/RobotoLight/RobotoLight.otf");
-  src: url("fonts/RobotoLight/RobotoLight.eot") \9;
-  src: local("☺"), url("../../system/helpers/fonts/RobotoLight/RobotoLight.woff2") format("woff2"), url("fonts/RobotoLight/RobotoLight.woff2") format("woff2"), url("fonts/RobotoLight/RobotoLight.woff") format("woff"), url("fonts/RobotoLight/RobotoLight.otf") format("opentype"), url("fonts/RobotoLight/RobotoLight.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'corbel';
-  /* see comment on @font-face above */
-  src: url("fonts/corbel/corbel.ttf");
-  src: url("fonts/corbel/corbel.eot") \9;
-  src: local("☺"), url("../../system/helpers/fonts/corbel/corbel.woff") format("woff"), url("fonts/corbel/corbel.woff") format("woff"), url("fonts/corbel/corbel.otf") format("opentype"), url("fonts/corbel/corbel.ttf") format("truetype"), url("fonts/corbel/corbel.svg") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'calibri';
-  src: local("☺"), url("../../system/helpers/fonts/calibri/CALIBRI_1.TTF"), url("fonts/calibri/CALIBRI_1.TTF");
-  font-weight: normal;
-  font-style: normal;
-}
+@font-family : Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+/* Custom Settings Overrides */
+/* Base Skin Styles */
 /*============================================================
 	"Flat" theme CSS styles
 	Copyright 2001 and beyond, Isomorphic Software
@@ -129,7 +65,7 @@ future compass compiles will overwrite it.
 
 /* tweak the builtin browser focus-outline - make it 1px and the same color as focused formItems */
 *:focus {
-  outline-color: #157fcc;
+  outline-color: #001abb;
   outline-style: solid;
   outline-width: 1px;
   outline-radius: 0px;
@@ -150,7 +86,7 @@ ul {
 .pageBackground {
   background-color: #fbfbfb;
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
 }
 
@@ -160,7 +96,7 @@ ul {
 .normalDisabled {
   background-color: transparent;
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
 }
 
@@ -178,7 +114,7 @@ body {
 
 /* drag outline */
 .dragOutline {
-  border: 2px dashed #157fcc;
+  border: 2px dashed #001abb;
 }
 
 /* drop indicator */
@@ -190,9 +126,9 @@ body {
 .canvasHover,
 .gridHover,
 .formHover {
-  background-color: #eff9ff;
+  background-color: #b694ee;
   color: #363636;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   padding: 5px;
   border: 1px solid #cccccc;
@@ -204,7 +140,7 @@ body {
 .largeHover {
   background-color: #3a4a53;
   color: #ffffff;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   padding: 10px;
   -moz-border-radius: 8px;
@@ -218,7 +154,7 @@ body {
 .hoverPinLabel {
   background-color: #3a4a53;
   color: #ffffff;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   padding: 10px;
   -moz-border-radius: 8px;
@@ -234,7 +170,7 @@ body {
   background-color: #fbfbfb;
   color: #282828;
   border: none;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   padding: 0px 5px 0px 5px;
 }
@@ -278,7 +214,7 @@ body {
 }
 
 .richTextEditorToolArea {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   border-bottom: 1px solid #cccccc;
 }
 
@@ -302,12 +238,12 @@ body {
 .linkTextDisabled {
   outline: none;
   vertical-align: middle;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
   -moz-border-radius: 0px;
   -webkit-border-radius: 0px;
   border-radius: 0px;
-  color: #0000EE;
+  color: #0E42D2;
 }
 
 .linkDisabled,
@@ -350,7 +286,7 @@ body {
   outline: 0px;
   color: #363636;
   font-size: 11px;
-  font-family: corbel;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   opacity: 1;
 }
@@ -370,10 +306,10 @@ body {
 .buttonSelected {
   color: #363636;
   background-color: #e2e2e2;
-  border: 1px solid #157fcc;
-  -moz-box-shadow: inset 0 0 5px 1px #157fcc;
-  -webkit-box-shadow: inset 0 0 5px 1px #157fcc;
-  box-shadow: inset 0 0 5px 1px #157fcc;
+  border: 1px solid #001abb;
+  -moz-box-shadow: inset 0 0 5px 1px #001abb;
+  -webkit-box-shadow: inset 0 0 5px 1px #001abb;
+  box-shadow: inset 0 0 5px 1px #001abb;
 }
 
 /* focused styles */
@@ -381,7 +317,7 @@ body {
 .buttonSelectedFocused {
   color: #363636;
   background-color: #f0f0f0;
-  border: 1px solid #157fcc;
+  border: 1px solid #001abb;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -392,7 +328,7 @@ body {
 .buttonSelectedFocusedOver {
   color: #363636;
   background-color: #cccccc;
-  border: 1px solid #157fcc;
+  border: 1px solid #001abb;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -405,7 +341,7 @@ body {
 .buttonSelectedFocusedDown {
   color: #363636;
   background-color: #e2e2e2;
-  border: 1px solid #157fcc;
+  border: 1px solid #001abb;
   -moz-box-shadow: inset 0 0 5px 1px #cccccc;
   -webkit-box-shadow: inset 0 0 5px 1px #cccccc;
   box-shadow: inset 0 0 5px 1px #cccccc;
@@ -443,8 +379,8 @@ body {
 .buttonPendingDisabled,
 .buttonPendingSelectedDisabled,
 .buttonDeselectedDisabled {
-  color: #0066cc;
-  font-family: RobotoLight;
+  color: #0001bb;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
   background-color: #ffffff;
   border: 1px solid #cccccc;
@@ -507,7 +443,7 @@ body {
   outline: 0px;
   color: #363636;
   font-size: 11px;
-  font-family: corbel;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   opacity: 1;
 }
@@ -527,10 +463,10 @@ body {
 .otherButtonSelected {
   color: #363636;
   background-color: #e2e2e2;
-  border: 1px solid #157fcc;
-  -moz-box-shadow: inset 0 0 5px 1px #157fcc;
-  -webkit-box-shadow: inset 0 0 5px 1px #157fcc;
-  box-shadow: inset 0 0 5px 1px #157fcc;
+  border: 1px solid #001abb;
+  -moz-box-shadow: inset 0 0 5px 1px #001abb;
+  -webkit-box-shadow: inset 0 0 5px 1px #001abb;
+  box-shadow: inset 0 0 5px 1px #001abb;
 }
 
 /* focused styles */
@@ -538,7 +474,7 @@ body {
 .otherButtonSelectedFocused {
   color: #363636;
   background-color: #f0f0f0;
-  border: 1px solid #157fcc;
+  border: 1px solid #001abb;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -549,7 +485,7 @@ body {
 .otherButtonSelectedFocusedOver {
   color: #363636;
   background-color: #cccccc;
-  border: 1px solid #157fcc;
+  border: 1px solid #001abb;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -562,7 +498,7 @@ body {
 .otherButtonSelectedFocusedDown {
   color: #363636;
   background-color: #e2e2e2;
-  border: 1px solid #157fcc;
+  border: 1px solid #001abb;
   -moz-box-shadow: inset 0 0 5px 1px #cccccc;
   -webkit-box-shadow: inset 0 0 5px 1px #cccccc;
   box-shadow: inset 0 0 5px 1px #cccccc;
@@ -599,8 +535,8 @@ body {
 .otherButtonPendingDisabled,
 .otherButtonPendingSelectedDisabled,
 .otherButtonDeselectedDisabled {
-  color: #0066cc;
-  font-family: RobotoLight;
+  color: #0001bb;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
   background-color: #ffffff;
   border: 1px solid #cccccc;
@@ -664,7 +600,7 @@ body {
   outline: 0px;
   color: #363636;
   font-size: 12.58px;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /* Over styles */
@@ -683,7 +619,7 @@ body {
 .buttonItemSelectedFocused {
   color: #363636;
   background-color: #f0f0f0;
-  border: 1px solid #157fcc;
+  border: 1px solid #001abb;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -694,7 +630,7 @@ body {
 .buttonItemSelectedFocusedOver {
   color: #363636;
   background-color: #cccccc;
-  border: 1px solid #157fcc;
+  border: 1px solid #001abb;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -707,7 +643,7 @@ body {
 .buttonItemSelectedFocusedDown {
   color: #363636;
   background-color: #e2e2e2;
-  border: 1px solid #157fcc;
+  border: 1px solid #001abb;
   -moz-box-shadow: inset 0 0 5px 1px #cccccc;
   -webkit-box-shadow: inset 0 0 5px 1px #cccccc;
   box-shadow: inset 0 0 5px 1px #cccccc;
@@ -735,7 +671,7 @@ body {
 .imgButtonDown,
 .imgButtonSelectedDown,
 .imgButtonDisabled {
-  font-family: corbel;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
 }
 
@@ -761,7 +697,7 @@ body {
 .stretchImgButtonPendingSelectedDown,
 .stretchImgButtonPendingSelectedDisabled,
 .stretchImgButtonPendingDisabled {
-  font-family: corbel;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   font-weight: normal;
 }
@@ -779,7 +715,7 @@ body {
 .stretchImgButtonPendingOver,
 .stretchImgButtonPendingDown,
 .stretchImgButtonPendingSelectedDown {
-  color: #0066cc;
+  color: #0001bb;
 }
 
 /* Button Title */
@@ -800,7 +736,7 @@ body {
 .buttonTitleOpened,
 .buttonTitleOpenedOver {
   color: #363636;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
 }
 
@@ -866,7 +802,7 @@ body {
   border-bottom: 1px solid transparent;
   border-top: 1px solid transparent;
   vertical-align: middle;
-  font-family: corbel;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   padding-bottom: 2px;
   padding-top: 2px;
@@ -994,7 +930,7 @@ body {
   border-radius: 5px;
   list-style-type: none;
   padding: 0px 4px 0px 6px;
-  font-family: corbel;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   line-height: 22px;
 }
@@ -1015,7 +951,7 @@ body {
 .menuButtonPendingFocused {
   color: #363636;
   background-color: #f0f0f0;
-  border: 1px solid #157fcc;
+  border: 1px solid #001abb;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -1025,7 +961,7 @@ body {
 .menuButtonFocusedOver {
   color: #363636;
   background-color: #cccccc;
-  border: 1px solid #157fcc;
+  border: 1px solid #001abb;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -1103,7 +1039,7 @@ body {
 .menuButtonPendingSelected,
 .menuButtonPendingSelectedDown,
 .menuButtonPendingSelectedOver {
-  color: #0066cc;
+  color: #0001bb;
 }
 
 /*============================================================
@@ -1155,7 +1091,7 @@ body {
 .windowHeaderText {
   background-color: #f0f0f0;
   color: #616161;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: bold;
   line-height: 17px;
@@ -1170,7 +1106,7 @@ body {
   background-color: #fbfbfb;
   border-top: 1px solid #cccccc;
   color: #616161;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   padding: 7px;
 }
@@ -1200,7 +1136,7 @@ body {
 .dialogStatusBarText {
   background-color: #f0f0f0;
   color: #616161;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: bold;
   line-height: 17px;
@@ -1211,7 +1147,7 @@ body {
   background-color: #ffffff;
   border-top: 1px solid #cccccc;
   color: #ffffff;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   padding: 7px;
 }
@@ -1225,7 +1161,7 @@ body {
     5) Layout
 ============================================================*/
 .layoutDropLine {
-  background-color: #157fcc;
+  background-color: #001abb;
   border: none;
   pointer-events: none;
 }
@@ -1303,9 +1239,9 @@ body {
 .detailPaneTitleDisabled,
 .listPaneTitle,
 .listPaneTitleDisabled {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   color: #616161;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
 }
 
@@ -1316,7 +1252,7 @@ body {
   background-color: #fbfbfb;
   border: 1px solid #cccccc;
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   outline: none;
 }
@@ -1515,7 +1451,7 @@ body {
 .tabButtonTopSelectedDisabled,
 .tabButtonTopDisabled {
   font-size: 11px;
-  font-family: corbel;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
   color: #797979 !important;
   background-color: #efefef;
@@ -1535,11 +1471,11 @@ body {
 .tabButtonTopSelectedOver,
 .tabButtonTopSelectedDown,
 .tabButtonTopSelected {
-  font-family: corbel;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #000000 !important;
   background-color: #e4e4e4;
   border: 1px solid #cccccc;
-  border-bottom: 2px solid #4b9afa;
+  border-bottom: 2px solid #1235e9;
 }
 
 .tabButtonTopFocused,
@@ -1548,8 +1484,8 @@ body {
 .tabButtonTopSelectedFocusedOver {
   color: #797979;
   background-color: #e2e2e2;
-  border: 1px solid #157fcc;
-  border-bottom: 2px solid #4b9afa;
+  border: 1px solid #001abb;
+  border-bottom: 2px solid #1235e9;
 }
 
 .tabButtonTopOver {
@@ -1563,7 +1499,7 @@ body {
   color: #000000;
   background-color: #ffffff;
   border: 1px solid #cccccc;
-  border-bottom: 2px solid #4b9afa;
+  border-bottom: 2px solid #1235e9;
 }
 
 .tabButtonTopSelectedFocused,
@@ -1571,14 +1507,14 @@ body {
   color: #000000;
   background-color: #e4e4e4;
   border: 1px solid #cccccc;
-  border-bottom: 2px solid #4b9afa;
+  border-bottom: 2px solid #1235e9;
 }
 
 .tabButtonTopSelectedFocusedOver {
   color: #000000 !important;
   background-color: #cccccc;
-  border: 1px solid #157fcc;
-  border-bottom: 2px solid #4b9afa;
+  border: 1px solid #001abb;
+  border-bottom: 2px solid #1235e9;
 }
 
 .tabButtonTopFocusedOver,
@@ -1597,8 +1533,8 @@ body {
   outline: none;
   color: #797979;
   background-color: #e2e2e2;
-  border: 1px solid #157fcc;
-  border-bottom: 2px solid #4b9afa;
+  border: 1px solid #001abb;
+  border-bottom: 2px solid #1235e9;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -1627,7 +1563,7 @@ body {
 .tabButtonBottomSelectedDisabled,
 .tabButtonBottomDisabled {
   font-size: 11px;
-  font-family: corbel;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
   color: #797979 !important;
   background-color: #efefef;
@@ -1647,11 +1583,11 @@ body {
 .tabButtonBottomSelectedOver,
 .tabButtonBottomSelectedDown,
 .tabButtonBottomSelected {
-  font-family: corbel;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #000000 !important;
   background-color: #e4e4e4;
   border: 1px solid #cccccc;
-  border-top: 2px solid #4b9afa;
+  border-top: 2px solid #1235e9;
 }
 
 .tabButtonBottomFocused,
@@ -1660,8 +1596,8 @@ body {
 .tabButtonBottomSelectedFocusedOver {
   color: #797979;
   background-color: #e2e2e2;
-  border: 1px solid #157fcc;
-  border-top: 2px solid #4b9afa;
+  border: 1px solid #001abb;
+  border-top: 2px solid #1235e9;
 }
 
 .tabButtonBottomOver {
@@ -1675,7 +1611,7 @@ body {
   color: #000000;
   background-color: #ffffff;
   border: 1px solid #cccccc;
-  border-top: 2px solid #4b9afa;
+  border-top: 2px solid #1235e9;
 }
 
 .tabButtonBottomSelectedFocused,
@@ -1683,14 +1619,14 @@ body {
   color: #000000;
   background-color: #e4e4e4;
   border: 1px solid #cccccc;
-  border-top: 2px solid #4b9afa;
+  border-top: 2px solid #1235e9;
 }
 
 .tabButtonBottomSelectedFocusedOver {
   color: #000000 !important;
   background-color: #cccccc;
-  border: 1px solid #157fcc;
-  border-top: 2px solid #4b9afa;
+  border: 1px solid #001abb;
+  border-top: 2px solid #1235e9;
 }
 
 .tabButtonBottomFocusedOver,
@@ -1709,8 +1645,8 @@ body {
   outline: none;
   color: #797979;
   background-color: #e2e2e2;
-  border: 1px solid #157fcc;
-  border-top: 2px solid #4b9afa;
+  border: 1px solid #001abb;
+  border-top: 2px solid #1235e9;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -1739,7 +1675,7 @@ body {
 .tabButtonLeftSelectedDisabled,
 .tabButtonLeftDisabled {
   font-size: 11px;
-  font-family: corbel;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
   color: #797979 !important;
   background-color: #efefef;
@@ -1759,11 +1695,11 @@ body {
 .tabButtonLeftSelectedOver,
 .tabButtonLeftSelectedDown,
 .tabButtonLeftSelected {
-  font-family: corbel;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #000000 !important;
   background-color: #e4e4e4;
   border: 1px solid #cccccc;
-  border-right: 2px solid #4b9afa;
+  border-right: 2px solid #1235e9;
 }
 
 .tabButtonLeftFocused,
@@ -1772,8 +1708,8 @@ body {
 .tabButtonLeftSelectedFocusedOver {
   color: #797979;
   background-color: #e2e2e2;
-  border: 1px solid #157fcc;
-  border-right: 2px solid #4b9afa;
+  border: 1px solid #001abb;
+  border-right: 2px solid #1235e9;
 }
 
 .tabButtonLeftOver {
@@ -1787,7 +1723,7 @@ body {
   color: #000000;
   background-color: #ffffff;
   border: 1px solid #cccccc;
-  border-right: 2px solid #4b9afa;
+  border-right: 2px solid #1235e9;
 }
 
 .tabButtonLeftSelectedFocused,
@@ -1795,14 +1731,14 @@ body {
   color: #000000;
   background-color: #e4e4e4;
   border: 1px solid #cccccc;
-  border-right: 2px solid #4b9afa;
+  border-right: 2px solid #1235e9;
 }
 
 .tabButtonLeftSelectedFocusedOver {
   color: #000000 !important;
   background-color: #cccccc;
-  border: 1px solid #157fcc;
-  border-right: 2px solid #4b9afa;
+  border: 1px solid #001abb;
+  border-right: 2px solid #1235e9;
 }
 
 .tabButtonLeftFocusedOver,
@@ -1821,8 +1757,8 @@ body {
   outline: none;
   color: #797979;
   background-color: #e2e2e2;
-  border: 1px solid #157fcc;
-  border-right: 2px solid #4b9afa;
+  border: 1px solid #001abb;
+  border-right: 2px solid #1235e9;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -1851,7 +1787,7 @@ body {
 .tabButtonRightSelectedDisabled,
 .tabButtonRightDisabled {
   font-size: 11px;
-  font-family: corbel;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
   color: #797979 !important;
   background-color: #efefef;
@@ -1871,11 +1807,11 @@ body {
 .tabButtonRightSelectedOver,
 .tabButtonRightSelectedDown,
 .tabButtonRightSelected {
-  font-family: corbel;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #000000 !important;
   background-color: #e4e4e4;
   border: 1px solid #cccccc;
-  border-left: 2px solid #4b9afa;
+  border-left: 2px solid #1235e9;
 }
 
 .tabButtonRightFocused,
@@ -1884,8 +1820,8 @@ body {
 .tabButtonRightSelectedFocusedOver {
   color: #797979;
   background-color: #e2e2e2;
-  border: 1px solid #157fcc;
-  border-left: 2px solid #4b9afa;
+  border: 1px solid #001abb;
+  border-left: 2px solid #1235e9;
 }
 
 .tabButtonRightOver {
@@ -1899,7 +1835,7 @@ body {
   color: #000000;
   background-color: #ffffff;
   border: 1px solid #cccccc;
-  border-left: 2px solid #4b9afa;
+  border-left: 2px solid #1235e9;
 }
 
 .tabButtonRightSelectedFocused,
@@ -1907,14 +1843,14 @@ body {
   color: #000000;
   background-color: #e4e4e4;
   border: 1px solid #cccccc;
-  border-left: 2px solid #4b9afa;
+  border-left: 2px solid #1235e9;
 }
 
 .tabButtonRightSelectedFocusedOver {
   color: #000000 !important;
   background-color: #cccccc;
-  border: 1px solid #157fcc;
-  border-left: 2px solid #4b9afa;
+  border: 1px solid #001abb;
+  border-left: 2px solid #1235e9;
 }
 
 .tabButtonRightFocusedOver,
@@ -1933,8 +1869,8 @@ body {
   outline: none;
   color: #797979;
   background-color: #e2e2e2;
-  border: 1px solid #157fcc;
-  border-left: 2px solid #4b9afa;
+  border: 1px solid #001abb;
+  border-left: 2px solid #1235e9;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -1968,7 +1904,7 @@ body {
 .iconOnlyTabButtonTopSelectedDisabled,
 .iconOnlyTabButtonTopDisabled {
   font-size: 11px;
-  font-family: corbel;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
   color: #797979 !important;
   background-color: #efefef;
@@ -1988,11 +1924,11 @@ body {
 .iconOnlyTabButtonTopSelectedOver,
 .iconOnlyTabButtonTopSelectedDown,
 .iconOnlyTabButtonTopSelected {
-  font-family: corbel;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #000000 !important;
   background-color: #e4e4e4;
   border: 1px solid #cccccc;
-  border-bottom: 2px solid #4b9afa;
+  border-bottom: 2px solid #1235e9;
 }
 
 .iconOnlyTabButtonTopFocused,
@@ -2001,8 +1937,8 @@ body {
 .iconOnlyTabButtonTopSelectedFocusedOver {
   color: #797979;
   background-color: #e2e2e2;
-  border: 1px solid #157fcc;
-  border-bottom: 2px solid #4b9afa;
+  border: 1px solid #001abb;
+  border-bottom: 2px solid #1235e9;
 }
 
 .iconOnlyTabButtonTopOver {
@@ -2016,7 +1952,7 @@ body {
   color: #000000;
   background-color: #ffffff;
   border: 1px solid #cccccc;
-  border-bottom: 2px solid #4b9afa;
+  border-bottom: 2px solid #1235e9;
 }
 
 .iconOnlyTabButtonTopSelectedFocused,
@@ -2024,14 +1960,14 @@ body {
   color: #000000;
   background-color: #e4e4e4;
   border: 1px solid #cccccc;
-  border-bottom: 2px solid #4b9afa;
+  border-bottom: 2px solid #1235e9;
 }
 
 .iconOnlyTabButtonTopSelectedFocusedOver {
   color: #000000 !important;
   background-color: #cccccc;
-  border: 1px solid #157fcc;
-  border-bottom: 2px solid #4b9afa;
+  border: 1px solid #001abb;
+  border-bottom: 2px solid #1235e9;
 }
 
 .iconOnlyTabButtonTopFocusedOver,
@@ -2050,8 +1986,8 @@ body {
   outline: none;
   color: #797979;
   background-color: #e2e2e2;
-  border: 1px solid #157fcc;
-  border-bottom: 2px solid #4b9afa;
+  border: 1px solid #001abb;
+  border-bottom: 2px solid #1235e9;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -2080,7 +2016,7 @@ body {
 .iconOnlyTabButtonBottomSelectedDisabled,
 .iconOnlyTabButtonBottomDisabled {
   font-size: 11px;
-  font-family: corbel;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
   color: #797979 !important;
   background-color: #efefef;
@@ -2100,11 +2036,11 @@ body {
 .iconOnlyTabButtonBottomSelectedOver,
 .iconOnlyTabButtonBottomSelectedDown,
 .iconOnlyTabButtonBottomSelected {
-  font-family: corbel;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #000000 !important;
   background-color: #e4e4e4;
   border: 1px solid #cccccc;
-  border-top: 2px solid #4b9afa;
+  border-top: 2px solid #1235e9;
 }
 
 .iconOnlyTabButtonBottomFocused,
@@ -2113,8 +2049,8 @@ body {
 .iconOnlyTabButtonBottomSelectedFocusedOver {
   color: #797979;
   background-color: #e2e2e2;
-  border: 1px solid #157fcc;
-  border-top: 2px solid #4b9afa;
+  border: 1px solid #001abb;
+  border-top: 2px solid #1235e9;
 }
 
 .iconOnlyTabButtonBottomOver {
@@ -2128,7 +2064,7 @@ body {
   color: #000000;
   background-color: #ffffff;
   border: 1px solid #cccccc;
-  border-top: 2px solid #4b9afa;
+  border-top: 2px solid #1235e9;
 }
 
 .iconOnlyTabButtonBottomSelectedFocused,
@@ -2136,14 +2072,14 @@ body {
   color: #000000;
   background-color: #e4e4e4;
   border: 1px solid #cccccc;
-  border-top: 2px solid #4b9afa;
+  border-top: 2px solid #1235e9;
 }
 
 .iconOnlyTabButtonBottomSelectedFocusedOver {
   color: #000000 !important;
   background-color: #cccccc;
-  border: 1px solid #157fcc;
-  border-top: 2px solid #4b9afa;
+  border: 1px solid #001abb;
+  border-top: 2px solid #1235e9;
 }
 
 .iconOnlyTabButtonBottomFocusedOver,
@@ -2162,8 +2098,8 @@ body {
   outline: none;
   color: #797979;
   background-color: #e2e2e2;
-  border: 1px solid #157fcc;
-  border-top: 2px solid #4b9afa;
+  border: 1px solid #001abb;
+  border-top: 2px solid #1235e9;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -2192,7 +2128,7 @@ body {
 .iconOnlyTabButtonLeftSelectedDisabled,
 .iconOnlyTabButtonLeftDisabled {
   font-size: 11px;
-  font-family: corbel;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
   color: #797979 !important;
   background-color: #efefef;
@@ -2212,11 +2148,11 @@ body {
 .iconOnlyTabButtonLeftSelectedOver,
 .iconOnlyTabButtonLeftSelectedDown,
 .iconOnlyTabButtonLeftSelected {
-  font-family: corbel;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #000000 !important;
   background-color: #e4e4e4;
   border: 1px solid #cccccc;
-  border-right: 2px solid #4b9afa;
+  border-right: 2px solid #1235e9;
 }
 
 .iconOnlyTabButtonLeftFocused,
@@ -2225,8 +2161,8 @@ body {
 .iconOnlyTabButtonLeftSelectedFocusedOver {
   color: #797979;
   background-color: #e2e2e2;
-  border: 1px solid #157fcc;
-  border-right: 2px solid #4b9afa;
+  border: 1px solid #001abb;
+  border-right: 2px solid #1235e9;
 }
 
 .iconOnlyTabButtonLeftOver {
@@ -2240,7 +2176,7 @@ body {
   color: #000000;
   background-color: #ffffff;
   border: 1px solid #cccccc;
-  border-right: 2px solid #4b9afa;
+  border-right: 2px solid #1235e9;
 }
 
 .iconOnlyTabButtonLeftSelectedFocused,
@@ -2248,14 +2184,14 @@ body {
   color: #000000;
   background-color: #e4e4e4;
   border: 1px solid #cccccc;
-  border-right: 2px solid #4b9afa;
+  border-right: 2px solid #1235e9;
 }
 
 .iconOnlyTabButtonLeftSelectedFocusedOver {
   color: #000000 !important;
   background-color: #cccccc;
-  border: 1px solid #157fcc;
-  border-right: 2px solid #4b9afa;
+  border: 1px solid #001abb;
+  border-right: 2px solid #1235e9;
 }
 
 .iconOnlyTabButtonLeftFocusedOver,
@@ -2274,8 +2210,8 @@ body {
   outline: none;
   color: #797979;
   background-color: #e2e2e2;
-  border: 1px solid #157fcc;
-  border-right: 2px solid #4b9afa;
+  border: 1px solid #001abb;
+  border-right: 2px solid #1235e9;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -2304,7 +2240,7 @@ body {
 .iconOnlyTabButtonRightSelectedDisabled,
 .iconOnlyTabButtonRightDisabled {
   font-size: 11px;
-  font-family: corbel;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
   color: #797979 !important;
   background-color: #efefef;
@@ -2324,11 +2260,11 @@ body {
 .iconOnlyTabButtonRightSelectedOver,
 .iconOnlyTabButtonRightSelectedDown,
 .iconOnlyTabButtonRightSelected {
-  font-family: corbel;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #000000 !important;
   background-color: #e4e4e4;
   border: 1px solid #cccccc;
-  border-left: 2px solid #4b9afa;
+  border-left: 2px solid #1235e9;
 }
 
 .iconOnlyTabButtonRightFocused,
@@ -2337,8 +2273,8 @@ body {
 .iconOnlyTabButtonRightSelectedFocusedOver {
   color: #797979;
   background-color: #e2e2e2;
-  border: 1px solid #157fcc;
-  border-left: 2px solid #4b9afa;
+  border: 1px solid #001abb;
+  border-left: 2px solid #1235e9;
 }
 
 .iconOnlyTabButtonRightOver {
@@ -2352,7 +2288,7 @@ body {
   color: #000000;
   background-color: #ffffff;
   border: 1px solid #cccccc;
-  border-left: 2px solid #4b9afa;
+  border-left: 2px solid #1235e9;
 }
 
 .iconOnlyTabButtonRightSelectedFocused,
@@ -2360,14 +2296,14 @@ body {
   color: #000000;
   background-color: #e4e4e4;
   border: 1px solid #cccccc;
-  border-left: 2px solid #4b9afa;
+  border-left: 2px solid #1235e9;
 }
 
 .iconOnlyTabButtonRightSelectedFocusedOver {
   color: #000000 !important;
   background-color: #cccccc;
-  border: 1px solid #157fcc;
-  border-left: 2px solid #4b9afa;
+  border: 1px solid #001abb;
+  border-left: 2px solid #1235e9;
 }
 
 .iconOnlyTabButtonRightFocusedOver,
@@ -2386,8 +2322,8 @@ body {
   outline: none;
   color: #797979;
   background-color: #e2e2e2;
-  border: 1px solid #157fcc;
-  border-left: 2px solid #4b9afa;
+  border: 1px solid #001abb;
+  border-left: 2px solid #1235e9;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -2413,14 +2349,14 @@ body {
 .sectionHeaderTitleopened,
 .sectionHeaderTitleclosed {
   color: #616161;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
 }
 
 .sectionHeaderTitleDisabledopened,
 .sectionHeaderTitleDisabledclosed {
   color: #ababab;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
 }
 
@@ -2428,10 +2364,10 @@ body {
 .sectionHeaderclosed,
 .sectionHeaderDisabledopened,
 .sectionHeaderDisabledclosed {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   color: #616161;
   padding: 0px 0px 0px 10px;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
   font-weight: bold;
   border-top: 1px solid #cccccc;
@@ -2455,7 +2391,7 @@ body {
 
 /* NavigationBar parts */
 .navToolbar {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   border: 1px solid #cccccc;
   -moz-border-radius: 0px;
   -webkit-border-radius: 0px;
@@ -2607,11 +2543,11 @@ body {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 24px;
   border: 1px solid transparent;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
 }
 
 .navButtonDown,
@@ -2628,13 +2564,13 @@ body {
 .navForwardButtonSelectedFocusedDown {
   background-color: #616161;
   border: 1px solid #929292;
-  color: #f0f0f0;
+  color: #ffffff;
 }
 
 .navBarHeader {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   color: #616161;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
   font-weight: bold;
   /* !important to override the cellpadding attribute */
@@ -2684,7 +2620,7 @@ body {
 .navForwardButtonDisabled,
 .navBackButtonDisabled,
 .navButtonDisabled {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   color: #ababab;
 }
 
@@ -2700,9 +2636,9 @@ body {
 
 .navItemHeader {
   color: #616161;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   padding-left: 0px 0px 0px 10px;
   font-weight: bold;
   border-top: 1px solid #cccccc;
@@ -2734,7 +2670,7 @@ body {
 .navItemDisabledDark {
   background-color: #ffffff;
   color: #3f3f3f;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   text-overflow: ellipsis;
   padding: 2px 3px 2px 3px;
@@ -2746,23 +2682,23 @@ body {
 
 .navItemOver,
 .navItemOverDark {
-  background-color: #f0f0f0;
+  background-color: white;
   color: #3f3f3f;
 }
 
 .navItemSelected,
 .navItemSelectedDark {
   color: #3f3f3f;
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
 }
 
 .navItemSelectedOver,
 .navItemSelectedOverDark {
   color: #3f3f3f;
-  background-color: #e2e2e2;
-  -moz-box-shadow: 0 0 5px #e2e2e2;
-  -webkit-box-shadow: 0 0 5px #e2e2e2;
-  box-shadow: 0 0 5px #e2e2e2;
+  background-color: #f1f1f1;
+  -moz-box-shadow: 0 0 5px #f1f1f1;
+  -webkit-box-shadow: 0 0 5px #f1f1f1;
+  box-shadow: 0 0 5px #f1f1f1;
 }
 
 .navItemDisabled,
@@ -2791,7 +2727,7 @@ body {
 .navItemDisabledAltCol,
 .navItemDisabledDarkAltCol {
   font-size: 12px;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #3f3f3f;
   text-overflow: ellipsis;
   border: none;
@@ -2816,7 +2752,7 @@ body {
 
 .navItemOverAltCol,
 .navItemOverDarkAltCol {
-  background-color: #f0f0f0;
+  background-color: white;
   color: #3f3f3f;
 }
 
@@ -2828,7 +2764,7 @@ body {
 .navItemPendingSelectedDarkAltCol,
 .navItemPendingSelectedOverAltCol,
 .navItemPendingSelectedOverDarkAltCol {
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
   color: #3f3f3f;
 }
 
@@ -2836,7 +2772,7 @@ body {
 .navItemSelectedOverDarkAltCol,
 .navItemPendingSelectedOverAltCol,
 .navItemPendingSelectedOverDarkAltCol {
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
 }
 
 /*============================================================
@@ -2869,7 +2805,7 @@ body {
   -webkit-text-size-adjust: 100%;
   background-color: transparent;
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
 }
 
@@ -2889,7 +2825,7 @@ body {
   -webkit-text-size-adjust: 100%;
   background-color: transparent;
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
 }
 
@@ -2907,7 +2843,7 @@ body {
   -webkit-text-size-adjust: 100%;
   background-color: transparent;
   color: #8f2227;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
 }
 
@@ -2939,7 +2875,7 @@ body {
   -webkit-text-size-adjust: 100%;
   background-color: transparent;
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
   padding: 4px 0px 2px 0px;
 }
@@ -2960,7 +2896,7 @@ body {
   -webkit-text-size-adjust: 100%;
   background-color: transparent;
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
   padding: 4px 0px 2px 0px;
 }
@@ -2979,7 +2915,7 @@ body {
   -webkit-text-size-adjust: 100%;
   background-color: transparent;
   color: #8f2227;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
   padding: 4px 0px 2px 0px;
 }
@@ -3034,7 +2970,7 @@ body {
   -webkit-text-size-adjust: 100%;
   background-color: transparent;
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
 }
 
@@ -3059,7 +2995,7 @@ body {
 .formCellErrorFocusedOver {
   outline: none;
   color: #282828;
-  border-color: #157fcc;
+  border-color: #001abb;
   background-color: #ffffff;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
@@ -3090,7 +3026,7 @@ body {
 .formHintErrorDisabledRTL {
   background-color: transparent;
   color: #999999;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
   padding: 3px;
 }
@@ -3123,7 +3059,7 @@ body {
 .headerItemError,
 .headerItemErrorRTL {
   color: #4d4d4d;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: bold;
   background-color: transparent;
@@ -3164,7 +3100,7 @@ body {
   background-color: transparent;
   color: #282828;
   outline: none;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
 }
 
@@ -3202,7 +3138,7 @@ body {
   background-color: transparent;
   color: #282828;
   outline: none;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
 }
 
@@ -3241,7 +3177,7 @@ body {
   background-color: transparent;
   color: #282828;
   outline: none;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
 }
 
@@ -3307,7 +3243,7 @@ body {
 .pickListCellDeselectedDisabledDarkRTL {
   background-color: #ffffff;
   color: #3f3f3f;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   /*padding: 7px 9px; this setting affects the checkbox in selects*/
   /* padding-bottom: $pickList_cell_padding; */
@@ -3370,7 +3306,7 @@ body {
   -webkit-border-radius: 3px;
   border-radius: 3px;
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
@@ -3547,21 +3483,21 @@ body {
 .pickerSearchBoxPendingFocused,
 .pickerSearchBoxPendingFocusedRTL {
   color: #282828;
-  border-bottom: 1px solid #157fcc;
-  border-top: 1px solid #157fcc;
+  border-bottom: 1px solid #001abb;
+  border-top: 1px solid #001abb;
   -moz-outline-offset: -1;
 }
 
 .pickerSearchBoxFocused,
 .pickerSearchBoxPendingFocused {
-  border-left: 1px solid #157fcc;
-  border-right: 1px solid #157fcc;
+  border-left: 1px solid #001abb;
+  border-right: 1px solid #001abb;
 }
 
 .pickerSearchBoxFocusedRTL,
 .pickerSearchBoxPendingFocusedRTL {
-  border-right: 1px solid #157fcc;
-  border-left: 1px solid #157fcc;
+  border-right: 1px solid #001abb;
+  border-left: 1px solid #001abb;
 }
 
 .pickerSearchBoxPending,
@@ -3570,7 +3506,7 @@ body {
 .pickerSearchBoxPendingFocusedRTL,
 .pickerSearchBoxPendingError,
 .pickerSearchBoxPendingErrorRTL {
-  color: #0066cc;
+  color: #0001bb;
 }
 .pickerSearchBoxPending:-moz-placeholder,
 .pickerSearchBoxPendingRTL:-moz-placeholder,
@@ -3578,7 +3514,7 @@ body {
 .pickerSearchBoxPendingFocusedRTL:-moz-placeholder,
 .pickerSearchBoxPendingError:-moz-placeholder,
 .pickerSearchBoxPendingErrorRTL:-moz-placeholder {
-  color: #0066cc;
+  color: #0001bb;
   opacity: 1;
   text-overflow: ellipsis;
 }
@@ -3588,7 +3524,7 @@ body {
 .pickerSearchBoxPendingFocusedRTL::-moz-placeholder,
 .pickerSearchBoxPendingError::-moz-placeholder,
 .pickerSearchBoxPendingErrorRTL::-moz-placeholder {
-  color: #0066cc;
+  color: #0001bb;
   opacity: 1;
   text-overflow: ellipsis;
 }
@@ -3598,7 +3534,7 @@ body {
 .pickerSearchBoxPendingFocusedRTL:-ms-input-placeholder,
 .pickerSearchBoxPendingError:-ms-input-placeholder,
 .pickerSearchBoxPendingErrorRTL:-ms-input-placeholder {
-  color: #0066cc;
+  color: #0001bb;
   opacity: 1;
   text-overflow: ellipsis;
 }
@@ -3608,7 +3544,7 @@ body {
 .pickerSearchBoxPendingFocusedRTL::-webkit-input-placeholder,
 .pickerSearchBoxPendingError::-webkit-input-placeholder,
 .pickerSearchBoxPendingErrorRTL::-webkit-input-placeholder {
-  color: #0066cc;
+  color: #0001bb;
   opacity: 1;
   text-overflow: ellipsis;
 }
@@ -3653,7 +3589,7 @@ body {
   background-color: #ffffff;
   color: #282828;
   border: none;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
   padding: 0px;
   -o-text-overflow: ellipsis;
@@ -3710,7 +3646,7 @@ select:disabled {
 }
 
 select:hover {
-  border-color: #157fcc;
+  border-color: #001abb;
   -moz-box-shadow: 0 0 5px 0 #b8b8b8;
   -webkit-box-shadow: 0 0 5px 0 #b8b8b8;
   box-shadow: 0 0 5px 0 #b8b8b8;
@@ -3718,7 +3654,7 @@ select:hover {
 
 select:focus {
   outline: none;
-  border-color: #157fcc;
+  border-color: #001abb;
   background-color: #ffffff;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
@@ -3735,7 +3671,7 @@ select:hover > focus {
 option:focus,
 option:hover,
 option:checked {
-  background-color: #e2e2e2 !important;
+  background-color: #f1f1f1 !important;
   color: #3f3f3f !important;
 }
 
@@ -3906,7 +3842,7 @@ option:checked {
 .textAreaItemLiteDisabledHint,
 .textAreaItemLiteDisabledHintRTL {
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
   padding: 0px 3px;
   outline: none;
@@ -4133,7 +4069,7 @@ option:checked {
 .textAreaItemLitePendingFocusedOverRTL {
   outline: none;
   color: #282828;
-  border-color: #157fcc;
+  border-color: #001abb;
   background-color: #ffffff;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
@@ -4180,7 +4116,7 @@ option:checked {
   -moz-box-shadow: 0 0 5px 0 #b8b8b8;
   -webkit-box-shadow: 0 0 5px 0 #b8b8b8;
   box-shadow: 0 0 5px 0 #b8b8b8;
-  border: 1px solid #157fcc;
+  border: 1px solid #001abb;
   background-color: #ffffff;
   color: #282828;
 }
@@ -4188,7 +4124,7 @@ option:checked {
 .selectItemLiteControlFocused,
 .selectItemLiteControlFocusedRTL {
   outline: none;
-  border-color: #157fcc;
+  border-color: #001abb;
 }
 
 /* focused over */
@@ -4244,7 +4180,7 @@ option:checked {
 .textAreaItemLitePendingFocusedOverRTL,
 .textAreaItemLitePendingError,
 .textAreaItemLitePendingErrorRTL {
-  color: #0066cc;
+  color: #0001bb;
 }
 .textItemLitePending:-moz-placeholder,
 .textItemLitePendingRTL:-moz-placeholder,
@@ -4272,7 +4208,7 @@ option:checked {
 .textAreaItemLitePendingFocusedOverRTL:-moz-placeholder,
 .textAreaItemLitePendingError:-moz-placeholder,
 .textAreaItemLitePendingErrorRTL:-moz-placeholder {
-  color: #0066cc;
+  color: #0001bb;
   opacity: 1;
   text-overflow: ellipsis;
 }
@@ -4302,7 +4238,7 @@ option:checked {
 .textAreaItemLitePendingFocusedOverRTL::-moz-placeholder,
 .textAreaItemLitePendingError::-moz-placeholder,
 .textAreaItemLitePendingErrorRTL::-moz-placeholder {
-  color: #0066cc;
+  color: #0001bb;
   opacity: 1;
   text-overflow: ellipsis;
 }
@@ -4332,7 +4268,7 @@ option:checked {
 .textAreaItemLitePendingFocusedOverRTL:-ms-input-placeholder,
 .textAreaItemLitePendingError:-ms-input-placeholder,
 .textAreaItemLitePendingErrorRTL:-ms-input-placeholder {
-  color: #0066cc;
+  color: #0001bb;
   opacity: 1;
   text-overflow: ellipsis;
 }
@@ -4362,14 +4298,14 @@ option:checked {
 .textAreaItemLitePendingFocusedOverRTL::-webkit-input-placeholder,
 .textAreaItemLitePendingError::-webkit-input-placeholder,
 .textAreaItemLitePendingErrorRTL::-webkit-input-placeholder {
-  color: #0066cc;
+  color: #0001bb;
   opacity: 1;
   text-overflow: ellipsis;
 }
 
 /* pending-value text in multi-selects */
 .selectItemLiteMultiValuePending {
-  color: #0066cc;
+  color: #0001bb;
 }
 
 .selectItemLiteMultiValuePendingDisabled {
@@ -4766,7 +4702,7 @@ option:checked {
 .selectItemLiteTextErrorDisabledRTL {
   border: none;
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
   line-height: 12.58px;
   outline: none;
@@ -4813,7 +4749,7 @@ option:checked {
 
 .progressbarProgressDisabled,
 .progressbarProgressSelectedDisabled {
-  background-color: #cccccc;
+  background-color: #dbdbdb;
   -moz-border-radius: 0px 0px 0px 0px;
   -webkit-border-radius: 0px;
   border-radius: 0px 0px 0px 0px;
@@ -4821,7 +4757,7 @@ option:checked {
 }
 
 .progressbarTitle {
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
   color: #ffffff;
   padding: 4px 4px 4px 4px;
@@ -5011,7 +4947,7 @@ option:checked {
 .pickListCellDeselectedSelectedRTL,
 .pickListCellDeselectedSelectedDark,
 .pickListCellDeselectedSelectedDarkRTL {
-  background-color: #f0f0f0;
+  background-color: white;
 }
 
 .pickListCellOver,
@@ -5026,7 +4962,7 @@ option:checked {
 .pickListCellDeselectedOverRTL,
 .pickListCellDeselectedOverDark,
 .pickListCellDeselectedOverDarkRTL {
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
   border: none;
 }
 
@@ -5042,7 +4978,7 @@ option:checked {
 .pickListCellDeselectedSelectedOverRTL,
 .pickListCellDeselectedSelectedOverDark,
 .pickListCellDeselectedSelectedOverDarkRTL {
-  background-color: #f0f0f0;
+  background-color: white;
   border: none;
 }
 
@@ -5126,7 +5062,7 @@ option:checked {
 .labelAnchorPendingErrorFocusedOverRTL {
   background-color: transparent;
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
   vertical-align: middle;
   text-decoration: none;
@@ -5153,7 +5089,7 @@ option:checked {
 .pickListCellPendingSelectedOverDarkRTL,
 .pickListCellPendingDisabledDark,
 .pickListCellPendingDisabledDarkRTL {
-  color: #0066cc;
+  color: #0001bb;
 }
 
 .labelAnchorPending,
@@ -5168,7 +5104,7 @@ option:checked {
 .labelAnchorPendingErrorOver,
 .labelAnchorPendingErrorRTL,
 .labelAnchorPendingErrorOverRTL {
-  color: #0066cc;
+  color: #0001bb;
 }
 
 .labelAnchorDisabled,
@@ -5205,7 +5141,7 @@ option:checked {
 .checkboxItemLiteHintRTL,
 .checkboxItemLiteDisabledHint,
 .checkboxItemLiteDisabledHintRTL {
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
   text-decoration: none;
   text-align: left;
@@ -5504,7 +5440,7 @@ option:checked {
 .buttonItemTitleDisabled,
 .buttonItemTitleSelectedDisabled {
   color: #363636;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
 }
 
@@ -5529,7 +5465,7 @@ option:checked {
 .filterBuilderTitleCell {
   background-color: #ededed;
   font-size: 12px;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #3f3f3f;
   padding: 2px 3px 2px 3px;
   border: none;
@@ -5542,7 +5478,7 @@ option:checked {
 .filterBuilderTitleCellDisabled {
   background-color: #ededed;
   font-size: 12px;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #b8b8b8;
   padding: 2px 3px 2px 3px;
   border: none;
@@ -5555,7 +5491,7 @@ option:checked {
 .ruleScopeSelectionTitleCell {
   background-color: #ededed;
   font-size: 12px;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #3f3f3f;
   padding: 2px 3px 2px 3px;
   text-overflow: ellipsis;
@@ -5567,7 +5503,7 @@ option:checked {
 .ruleScopeSelectionTitleCellSource {
   background-color: #ededed;
   font-size: 12px;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #b8b8b8;
   padding: 2px 3px 2px 3px;
   text-overflow: ellipsis;
@@ -5654,7 +5590,7 @@ option:checked {
   background-color: #ffffff;
   color: #616161;
   border: 0px solid #ffffff;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
 }
 
@@ -5712,7 +5648,7 @@ option:checked {
 
 .dateChooserButtonOver,
 .dateChooserButtonDown {
-  color: #157fcc;
+  color: #001abb;
   cursor: pointer;
 }
 
@@ -5722,7 +5658,7 @@ option:checked {
 .dateChooserWeekendButtonSelected,
 .dateChooserWeekendButtonSelectedOver,
 .dateChooserWeekendButtonSelectedDown {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
 }
 
 .dateChooserSelectedWeek,
@@ -5766,13 +5702,13 @@ option:checked {
 .dateChooserWeekendOver,
 .dateChooserWeekendSelected,
 .dateChooserWeekendDisabled {
-  background-color: #f0f0f0;
-  border: 0px solid #f0f0f0;
+  background-color: #ffffff;
+  border: 0px solid #ffffff;
 }
 
 .dateChooserWeekdayOver,
 .dateChooserWeekendOver {
-  background-color: #f0f0f0;
+  background-color: white;
   color: #3f3f3f;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -5782,9 +5718,9 @@ option:checked {
 /* selected/over date-cell styling */
 .dateChooserWeekdaySelectedOver,
 .dateChooserWeekendSelectedOver {
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
   color: #3f3f3f;
-  border: 0px solid #f0f0f0;
+  border: 0px solid white;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -5796,7 +5732,7 @@ option:checked {
 .dateChooserWeekendSelected,
 .dateChooserWeekendDown,
 .dateChooserWeekendSelectedDown {
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
   color: #3f3f3f;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -5813,7 +5749,7 @@ option:checked {
   color: #b8b8b8;
   border: 0px solid #ffffff;
   background-color: #ffffff;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
 }
 
@@ -5836,9 +5772,9 @@ option:checked {
 .dateChooserDisabledWeekendSelectedDown,
 .dateChooserDisabledWeekendSelectedOver {
   color: #b8b8b8;
-  border: 0px solid #f0f0f0;
-  background-color: #f0f0f0;
-  font-family: RobotoLight;
+  border: 0px solid #ffffff;
+  background-color: #ffffff;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
 }
 
@@ -5855,9 +5791,9 @@ option:checked {
 /* end dateChooser disabled weekend cells */
 .dateChooserWeekdaySelected,
 .dateChooserWeekendSelected {
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
   color: #3f3f3f;
-  border: 0px solid #e2e2e2;
+  border: 0px solid #f1f1f1;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -5891,7 +5827,7 @@ option:checked {
 
 /* applied to the navigation-layout at the top of the DateChooser */
 .dateChooserBorderBottom {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   border-bottom: 1px solid #cccccc;
   -moz-border-radius: 0px;
   -webkit-border-radius: 0px;
@@ -5909,9 +5845,9 @@ option:checked {
 .dateChooserNavButtonFocusedOver,
 .dateChooserNavButtonFocusedDown,
 .dateChooserNavButtonDisabled {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   color: #616161;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   font-weight: bold;
   padding: 2px;
@@ -5928,7 +5864,7 @@ option:checked {
 .dateChooserNavButtonFocused,
 .dateChooserNavButtonFocusedOver,
 .dateChooserNavButtonFocusedDown {
-  color: #157fcc;
+  color: #001abb;
 }
 
 .dateChooserNavButtonDisabled {
@@ -5982,7 +5918,7 @@ option:checked {
 .colorPickerHeader,
 .colorPickerHilite {
   padding: 0px 0px 0px 10px;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
 }
 
 .colorPickerBody {
@@ -6001,12 +5937,12 @@ option:checked {
 }
 
 .colorPickerHeaderText {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   color: #616161;
   font-size: 14px;
   font-weight: bold;
   padding: 4px 8px 4px 8px;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /* ColorPicker swatch  */
@@ -6014,7 +5950,7 @@ option:checked {
 .colorPickerSwatchImageOver,
 .colorPickerSwatchImageDown,
 .colorPickerSwatchImageDisabled {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   border: 1px solid #b8b8b8;
 }
 
@@ -6026,7 +5962,7 @@ option:checked {
 .colorPickerOpacityBox {
   background-color: #ffffff;
   border: 1px solid #b8b8b8;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
   padding: 0px 3px;
 }
@@ -6035,12 +5971,12 @@ option:checked {
 .colorChooserCell,
 .colorChooserCellOver,
 .colorChooserCellDown {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   border: 1px solid #cccccc;
 }
 
 .colorChooserCellDisabled {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   border: 1px solid #b8b8b8;
 }
 
@@ -6084,7 +6020,7 @@ option:checked {
 .textItemLiteEditorTypeHintRTL,
 .textItemLiteEditorTypeDisabledHint,
 .textItemLiteEditorTypeDisabledHintRTL {
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
   color: #282828;
   padding: 0px 2px 0px 2px;
@@ -6109,10 +6045,10 @@ option:checked {
 .textItemLiteEditorTypePendingFocused,
 .textItemLiteEditorTypePendingFocusedRTL {
   outline: none;
-  border-color: #157fcc;
-  -moz-box-shadow: inset 0 0 5px 0 #157fcc;
-  -webkit-box-shadow: inset 0 0 5px 0 #157fcc;
-  box-shadow: inset 0 0 5px 0 #157fcc;
+  border-color: #001abb;
+  -moz-box-shadow: inset 0 0 5px 0 #001abb;
+  -webkit-box-shadow: inset 0 0 5px 0 #001abb;
+  box-shadow: inset 0 0 5px 0 #001abb;
 }
 
 /* suppress borders on selectItem text - border is applied to control element
@@ -6146,7 +6082,7 @@ option:checked {
 .selectItemLiteTextEditorTypeDisabledHintRTL {
   background-color: rgba(255, 255, 255, 0);
   background-color: \9 transparent;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
   color: #282828;
   padding-right: 0px;
@@ -6210,7 +6146,7 @@ option:checked {
 .selectItemLiteControlEditorTypePendingFocusedOver,
 .selectItemLiteControlEditorTypePendingFocusedOverRTL {
   outline: none;
-  border-color: #157fcc;
+  border-color: #001abb;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -6225,7 +6161,7 @@ option:checked {
   -moz-box-shadow: 0 0 5px 0 #b8b8b8;
   -webkit-box-shadow: 0 0 5px 0 #b8b8b8;
   box-shadow: 0 0 5px 0 #b8b8b8;
-  border: 1px solid #157fcc;
+  border: 1px solid #001abb;
 }
 
 .selectItemLiteControlEditorTypeOver,
@@ -6237,7 +6173,7 @@ option:checked {
   -moz-box-shadow: 0 0 5px 0 #b8b8b8;
   -webkit-box-shadow: 0 0 5px 0 #b8b8b8;
   box-shadow: 0 0 5px 0 #b8b8b8;
-  border: 1px solid #157fcc;
+  border: 1px solid #001abb;
 }
 
 /* focused over */
@@ -6340,7 +6276,7 @@ option:checked {
 .rangebarRange,
 .rangebarValue {
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
   line-height: 12.58px;
 }
@@ -6570,13 +6506,13 @@ option:checked {
 .sliderValuePendingTextOver,
 .sliderValuePendingTextDisabled {
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12.58px;
   padding: 2px;
 }
 
 .sliderValuePendingText {
-  color: #0066cc;
+  color: #0001bb;
 }
 
 .sliderValueTextDisabled,
@@ -6633,7 +6569,7 @@ option:checked {
   border-bottom: 1px solid #929292;
   border-right: 1px solid #929292;
   color: #363636;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   -webkit-text-size-adjust: 100%;
 }
@@ -6711,7 +6647,7 @@ option:checked {
 .offlineMessage,
 .emptyMessage {
   color: #282828;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   padding: 11px;
 }
@@ -6720,18 +6656,18 @@ option:checked {
   background-color: #ffffff;
   border: 1px dotted #cccccc;
   color: #3f3f3f;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   padding: 1px;
 }
 
 .dragLine {
-  border-top: 2px dashed #157fcc;
+  border-top: 2px dashed #001abb;
   pointer-events: none;
 }
 
 .dragLineVertical {
-  border-right: 2px dashed #157fcc;
+  border-right: 2px dashed #001abb;
   pointer-events: none;
 }
 
@@ -6742,7 +6678,7 @@ option:checked {
   line-height: 22px;
   background-color: #fbfbfb;
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
 }
 
@@ -6774,7 +6710,7 @@ option:checked {
   padding: 0px;
   margin: 0px 0px 0px 1px;
   outline: 0px;
-  font-family: corbel;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 9px;
   font-weight: normal;
 }
@@ -6795,7 +6731,7 @@ option:checked {
 .filterOperatorIconSelectedFocused {
   color: #363636;
   background-color: #f0f0f0;
-  border: 1px solid #157fcc;
+  border: 1px solid #001abb;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -6807,7 +6743,7 @@ option:checked {
 .filterOperatorIconSelectedFocusedOver {
   color: #363636;
   background-color: #cccccc;
-  border: 1px solid #157fcc;
+  border: 1px solid #001abb;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -6871,7 +6807,7 @@ some LG header-titles to be vertically offset from other headers */
   vertical-align: middle;
   color: #616161;
   background-color: #f0f0f0;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 12px;
   letter-spacing: 0.3px;
@@ -6887,7 +6823,7 @@ some LG header-titles to be vertically offset from other headers */
 .headerSpanButtonDown,
 .headerSpanButtonDisabled {
   color: #616161;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 12px;
   background-color: #f0f0f0;
@@ -6925,7 +6861,7 @@ some LG header-titles to be vertically offset from other headers */
   background-color: #f0f0f0;
   font-weight: bold;
   font-size: 12px;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   letter-spacing: 0.3px;
   padding: 0px 0px 0px 3px;
   border-right: none;
@@ -6956,7 +6892,7 @@ some LG header-titles to be vertically offset from other headers */
 .sorterButton {
   color: #616161;
   background-color: #f0f0f0;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 12px;
   letter-spacing: 0.3px;
@@ -6970,7 +6906,7 @@ some LG header-titles to be vertically offset from other headers */
   background-color: #d0d0d0;
   font-weight: bold;
   font-size: 12px;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   letter-spacing: 0.3px;
   padding: 0px 0px 0px 3px;
 }
@@ -6985,7 +6921,7 @@ some LG header-titles to be vertically offset from other headers */
   color: #ababab;
   font-weight: bold;
   font-size: 12px;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   letter-spacing: 0.3px;
   padding: 0px 0px 0px 3px;
 }
@@ -6998,7 +6934,7 @@ some LG header-titles to be vertically offset from other headers */
 .sorterButtonDown {
   color: #616161;
   background-color: #e0e0e0;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 12px;
   letter-spacing: 0.3px;
@@ -7013,7 +6949,7 @@ some LG header-titles to be vertically offset from other headers */
 .sorterButtonSelectedDown {
   color: #616161;
   background-color: #e0e0e0;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 12px;
   letter-spacing: 0.3px;
@@ -7060,7 +6996,7 @@ some LG header-titles to be vertically offset from other headers */
   background-color: #f0f0f0;
   font-weight: bold;
   font-size: 12px;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   letter-spacing: 0.3px;
   padding: 3px 0px 3px 0px;
   border-right: 1px solid #cccccc;
@@ -7090,7 +7026,7 @@ some LG header-titles to be vertically offset from other headers */
 .headerButtonRotated {
   color: #616161;
   background-color: #f0f0f0;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 12px;
   letter-spacing: 0.3px;
@@ -7103,7 +7039,7 @@ some LG header-titles to be vertically offset from other headers */
   background-color: #d0d0d0;
   font-weight: bold;
   font-size: 12px;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   letter-spacing: 0.3px;
   padding: 3px 0px 3px 0px;
 }
@@ -7116,7 +7052,7 @@ some LG header-titles to be vertically offset from other headers */
   color: #ababab;
   font-weight: bold;
   font-size: 12px;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   letter-spacing: 0.3px;
   padding: 3px 0px 3px 0px;
 }
@@ -7127,7 +7063,7 @@ some LG header-titles to be vertically offset from other headers */
 .headerButtonDownRotated {
   color: #616161;
   background-color: #e0e0e0;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 12px;
   letter-spacing: 0.3px;
@@ -7140,7 +7076,7 @@ some LG header-titles to be vertically offset from other headers */
 .headerButtonSelectedDownRotated {
   color: #616161;
   background-color: #e0e0e0;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 12px;
   letter-spacing: 0.3px;
@@ -7157,7 +7093,7 @@ some LG header-titles to be vertically offset from other headers */
 .headerTitleDisabled,
 .headerTitleSelectedDisabled {
   color: #616161;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   padding-left: 4px;
   padding-right: 4px;
@@ -7222,7 +7158,7 @@ some LG header-titles to be vertically offset from other headers */
 .expansionCellCellDisabledDark {
   background-color: #ffffff;
   font-size: 12px;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #3f3f3f;
   padding: 2px 3px 2px 3px;
   border: none;
@@ -7242,7 +7178,7 @@ some LG header-titles to be vertically offset from other headers */
 .cellDeselectedOverDark,
 .recordSummaryCellOver,
 .recordSummaryCellOverDark {
-  background-color: #f0f0f0;
+  background-color: white;
   color: #3f3f3f;
   border-bottom: 1px solid transparent;
 }
@@ -7253,7 +7189,7 @@ some LG header-titles to be vertically offset from other headers */
 .cellPendingSelectedDark,
 .recordSummaryCellSelected,
 .recordSummaryCellSelectedDark {
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
   color: #3f3f3f;
 }
 
@@ -7263,7 +7199,7 @@ some LG header-titles to be vertically offset from other headers */
 .cellPendingSelectedOverDark,
 .recordSummaryCellSelectedOver,
 .recordSummaryCellSelectedOverDark {
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
   color: #3f3f3f;
 }
 
@@ -7304,7 +7240,7 @@ some LG header-titles to be vertically offset from other headers */
 .recordSummaryCellSelectedOverDarkAltCol,
 .recordSummaryCellSelectedOverAltCol {
   font-size: 12px;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #3f3f3f;
   padding: 2px 3px 2px 3px;
   text-overflow: ellipsis;
@@ -7334,14 +7270,14 @@ some LG header-titles to be vertically offset from other headers */
 .recordSummaryCellOverAltCol,
 .cellOverAltCol {
   font-size: 12px;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .recordSummaryCellOverDarkAltCol,
 .recordSummaryCellOverAltCol,
 .cellOverAltCol,
 .cellOverDarkAltCol {
-  background-color: #f0f0f0;
+  background-color: white;
   color: #3f3f3f;
 }
 
@@ -7357,7 +7293,7 @@ some LG header-titles to be vertically offset from other headers */
 .recordSummaryCellSelectedDarkAltCol,
 .recordSummaryCellSelectedOverDarkAltCol,
 .recordSummaryCellSelectedOverAltCol {
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
   color: #3f3f3f;
 }
 
@@ -7365,31 +7301,31 @@ some LG header-titles to be vertically offset from other headers */
 .cellSelectedOverDarkAltCol,
 .cellPendingSelectedOverAltCol,
 .cellPendingSelectedOverDarkAltCol {
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
 }
 
 /* ListGrid rollOverCanvas outer glow */
 .gridSelectionOver {
   border: none;
-  -moz-box-shadow: 0 0 5px 0 #e2e2e2;
-  -webkit-box-shadow: 0 0 5px 0 #e2e2e2;
-  box-shadow: 0 0 5px 0 #e2e2e2;
+  -moz-box-shadow: 0 0 5px 0 #f1f1f1;
+  -webkit-box-shadow: 0 0 5px 0 #f1f1f1;
+  box-shadow: 0 0 5px 0 #f1f1f1;
 }
 
 /* TreeGrid rollOverCanvas outer glow */
 .treeSelectionOver {
   border: none;
-  -moz-box-shadow: 0 0 5px 0 #e2e2e2;
-  -webkit-box-shadow: 0 0 5px 0 #e2e2e2;
-  box-shadow: 0 0 5px 0 #e2e2e2;
+  -moz-box-shadow: 0 0 5px 0 #f1f1f1;
+  -webkit-box-shadow: 0 0 5px 0 #f1f1f1;
+  box-shadow: 0 0 5px 0 #f1f1f1;
 }
 
 /* CubeGrid rollOverCanvas outer glow */
 .cubeSelectionOver {
   border: none;
-  -moz-box-shadow: 0 0 5px 0 #e2e2e2;
-  -webkit-box-shadow: 0 0 5px 0 #e2e2e2;
-  box-shadow: 0 0 5px 0 #e2e2e2;
+  -moz-box-shadow: 0 0 5px 0 #f1f1f1;
+  -webkit-box-shadow: 0 0 5px 0 #f1f1f1;
+  box-shadow: 0 0 5px 0 #f1f1f1;
 }
 
 /* Grid Summary cells */
@@ -7399,14 +7335,14 @@ some LG header-titles to be vertically offset from other headers */
 .gridSummaryCellDisabled,
 .gridSummaryCellDisabledDark,
 .gridSummaryCellDisabledAltCol {
-  color: #2579e0;
+  color: #0014cf;
   background-color: #f0f0f0;
   font-size: 12.5px;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   border: none;
-  border-bottom: 1px solid #2579e0;
-  border-top: 1px solid #2579e0;
+  border-bottom: 1px solid #0014cf;
+  border-top: 1px solid #0014cf;
   padding: 2px 3px 2px 3px;
   text-overflow: ellipsis;
 }
@@ -7453,8 +7389,8 @@ some LG header-titles to be vertically offset from other headers */
   background-color: #ffffff;
   border: none;
   border-bottom: 1px solid #cfcfcf;
-  color: #2579e0;
-  font-family: calibri;
+  color: #0014cf;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 12.5px;
   padding: 1px 1px 1px 3px;
@@ -7465,7 +7401,7 @@ some LG header-titles to be vertically offset from other headers */
 .groupNodeOverDark,
 .groupNodeOverAltCol,
 .groupNodeOverDarkAltCol {
-  background-color: #f0f0f0;
+  background-color: white;
   color: #3f3f3f;
   border-bottom: 1px solid #cfcfcf;
 }
@@ -7474,7 +7410,7 @@ some LG header-titles to be vertically offset from other headers */
 .groupNodeSelectedDark,
 .groupNodeSelectedAltCol,
 .groupNodeSelectedDarkAltCol {
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
   color: #3f3f3f;
   border-bottom: 1px solid #cfcfcf;
 }
@@ -7483,7 +7419,7 @@ some LG header-titles to be vertically offset from other headers */
 .groupNodeSelectedOverDark,
 .groupNodeSelectedOverAltCol,
 .groupNodeSelectedOverDarkAltCol {
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
   color: #3f3f3f;
   border-bottom: 1px solid #cfcfcf;
 }
@@ -7506,7 +7442,7 @@ some LG header-titles to be vertically offset from other headers */
   background-color: #fafafa;
   color: #3f3f3f;
   line-height: 22px;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   padding: 2px 3px 2px 3px;
   border: none;
@@ -7516,18 +7452,18 @@ some LG header-titles to be vertically offset from other headers */
 }
 
 .specialColOver {
-  background-color: #f0f0f0;
+  background-color: white;
   color: #3f3f3f;
   border-bottom: 1px solid transparent;
 }
 
 .specialColSelected {
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
   color: #3f3f3f;
 }
 
 .specialColSelectedOver {
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
   color: #3f3f3f;
 }
 
@@ -7558,8 +7494,8 @@ some LG header-titles to be vertically offset from other headers */
 .linkCellDisabledDark {
   background-color: #ffffff;
   font-size: 12px;
-  font-family: calibri;
-  color: #0000EE;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #0E42D2;
   padding: 2px 3px 2px 3px;
   border: none;
   border-bottom: 1px solid transparent;
@@ -7575,7 +7511,7 @@ some LG header-titles to be vertically offset from other headers */
 .linkCellOverDark,
 .linkCellDeselectedOver,
 .linkCellDeselectedOverDark {
-  background-color: #f0f0f0;
+  background-color: white;
   color: #3f3f3f;
   border-bottom: 1px solid transparent;
 }
@@ -7584,7 +7520,7 @@ some LG header-titles to be vertically offset from other headers */
 .linkCellSelectedDark,
 .linkCellPendingSelected,
 .linkCellPendingSelectedDark {
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
   color: #3f3f3f;
 }
 
@@ -7592,7 +7528,7 @@ some LG header-titles to be vertically offset from other headers */
 .linkCellSelectedOverDark,
 .linkCellPendingSelectedOver,
 .linkCellPendingSelectedOverDark {
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
   color: #3f3f3f;
 }
 
@@ -7623,8 +7559,8 @@ some LG header-titles to be vertically offset from other headers */
 .linkCellDisabledAltCol,
 .linkCellDisabledDarkAltCol {
   font-size: 12px;
-  font-family: calibri;
-  color: #0000EE;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #0E42D2;
   padding: 2px 3px 2px 3px;
   text-overflow: ellipsis;
   border: none;
@@ -7649,12 +7585,12 @@ some LG header-titles to be vertically offset from other headers */
 
 .linkCellOverAltCol {
   font-size: 12px;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .linkCellOverAltCol,
 .linkCellOverDarkAltCol {
-  background-color: #f0f0f0;
+  background-color: white;
   color: #3f3f3f;
 }
 
@@ -7666,7 +7602,7 @@ some LG header-titles to be vertically offset from other headers */
 .linkCellPendingSelectedDarkAltCol,
 .linkCellPendingSelectedOverAltCol,
 .linkCellPendingSelectedOverDarkAltCol {
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
   color: #3f3f3f;
 }
 
@@ -7674,7 +7610,7 @@ some LG header-titles to be vertically offset from other headers */
 .linkCellSelectedOverDarkAltCol,
 .linkCellPendingSelectedOverAltCol,
 .linkCellPendingSelectedOverDarkAltCol {
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
 }
 
 /* end linkCell */
@@ -7702,7 +7638,7 @@ some LG header-titles to be vertically offset from other headers */
 .treeCellDisabledDark {
   background-color: #ffffff;
   color: #3f3f3f;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   text-overflow: ellipsis;
   padding: 2px 3px 2px 3px;
@@ -7717,23 +7653,23 @@ some LG header-titles to be vertically offset from other headers */
 
 .treeCellOver,
 .treeCellOverDark {
-  background-color: #f0f0f0;
+  background-color: white;
   color: #3f3f3f;
 }
 
 .treeCellSelected,
 .treeCellSelectedDark {
   color: #3f3f3f;
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
 }
 
 .treeCellSelectedOver,
 .treeCellSelectedOverDark {
   color: #3f3f3f;
-  background-color: #e2e2e2;
-  -moz-box-shadow: 0 0 5px #e2e2e2;
-  -webkit-box-shadow: 0 0 5px #e2e2e2;
-  box-shadow: 0 0 5px #e2e2e2;
+  background-color: #f1f1f1;
+  -moz-box-shadow: 0 0 5px #f1f1f1;
+  -webkit-box-shadow: 0 0 5px #f1f1f1;
+  box-shadow: 0 0 5px #f1f1f1;
 }
 
 .treeCellDisabled,
@@ -7762,7 +7698,7 @@ some LG header-titles to be vertically offset from other headers */
 .treeCellDisabledAltCol,
 .treeCellDisabledDarkAltCol {
   font-size: 12px;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #3f3f3f;
   text-overflow: ellipsis;
   border: none;
@@ -7787,7 +7723,7 @@ some LG header-titles to be vertically offset from other headers */
 
 .treeCellOverAltCol,
 .treeCellOverDarkAltCol {
-  background-color: #f0f0f0;
+  background-color: white;
   color: #3f3f3f;
 }
 
@@ -7799,7 +7735,7 @@ some LG header-titles to be vertically offset from other headers */
 .treeCellPendingSelectedDarkAltCol,
 .treeCellPendingSelectedOverAltCol,
 .treeCellPendingSelectedOverDarkAltCol {
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
   color: #3f3f3f;
 }
 
@@ -7807,7 +7743,7 @@ some LG header-titles to be vertically offset from other headers */
 .treeCellSelectedOverDarkAltCol,
 .treeCellPendingSelectedOverAltCol,
 .treeCellPendingSelectedOverDarkAltCol {
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
 }
 
 /* Field builders (Formula/Summary) */
@@ -7827,19 +7763,19 @@ some LG header-titles to be vertically offset from other headers */
 ============================================================*/
 /* ToolStrip */
 .toolStrip {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   border: 1px solid #cccccc;
   padding: 4px 4px 4px 6px;
 }
 
 .vToolStrip {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   border: 1px solid #cccccc;
   padding: 4px;
 }
 
 .toolStripVertical {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   border: 1px solid #cccccc;
 }
 
@@ -7874,7 +7810,7 @@ some LG header-titles to be vertically offset from other headers */
   color: #282828;
   background-color: transparent;
   font-size: 11px;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding: 3px 4px 3px 4px;
 }
 
@@ -7942,7 +7878,7 @@ some LG header-titles to be vertically offset from other headers */
 .toolStripButtonSelectedDownOpened,
 .toolStripButtonSelectedOverOpened {
   background-color: #616161;
-  color: #f0f0f0;
+  color: #ffffff;
 }
 
 .toolStripButtonSelected,
@@ -7951,7 +7887,7 @@ some LG header-titles to be vertically offset from other headers */
 .toolStripButtonSelectedFocusedOver,
 .toolStripButtonSelectedDisabled {
   background-color: #616161;
-  color: #f0f0f0;
+  color: #ffffff;
   border: 1px solid #9e9e9e;
 }
 
@@ -7996,9 +7932,9 @@ some LG header-titles to be vertically offset from other headers */
 .ribbonGroupTitleDown,
 .ribbonGroupTitleSelectedDown,
 .ribbonGroupTitleDisabled {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   color: #616161;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15.5px;
   font-weight: 500;
   padding: 8px 10px 8px 10px;
@@ -8027,7 +7963,7 @@ some LG header-titles to be vertically offset from other headers */
   -webkit-border-radius: 3px;
   border-radius: 3px;
   padding: 3px;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13.5px;
   line-height: 22px;
   color: #4d4d4d;
@@ -8097,7 +8033,7 @@ some LG header-titles to be vertically offset from other headers */
 ============================================================*/
 .resizeThumb {
   border: 1px solid #cccccc;
-  background-color: #c9f4f8;
+  background-color: #908fe7;
   background-image: none;
 }
 
@@ -8612,7 +8548,7 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
   border: none;
   border-right: 1px solid #cccccc;
   border-bottom: 1px solid #cccccc;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   color: #3f3f3f;
   text-overflow: ellipsis;
@@ -8623,7 +8559,7 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
   border: none;
   border-right: 1px solid #cccccc;
   border-bottom: 1px solid #cccccc;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   color: #3f3f3f;
   text-overflow: ellipsis;
@@ -8634,7 +8570,7 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
   border: none;
   border-right: 1px solid #cccccc;
   border-bottom: 1px solid #cccccc;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   color: #b8b8b8;
   text-overflow: ellipsis;
@@ -8643,17 +8579,17 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 /* partial styles */
 .cubeCellOver {
   color: #3f3f3f;
-  background-color: #f0f0f0;
+  background-color: white;
 }
 
 .cubeCellSelected {
   color: #3f3f3f;
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
 }
 
 .cubeCellSelectedOver {
   color: #3f3f3f;
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
 }
 
 /* row headers */
@@ -8664,7 +8600,7 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 .rowHeaderSelectedDown,
 .rowHeaderSelectedOver,
 .rowHeaderSelectedDisabled {
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   color: #616161;
 }
@@ -8716,7 +8652,7 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 .rowHeaderLabelSelectedDown,
 .rowHeaderLabelSelectedOver,
 .rowHeaderLabelSelectedDisabled {
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   color: #616161;
 }
@@ -8759,7 +8695,7 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 .colHeaderSelectedDown,
 .colHeaderSelectedOver,
 .colHeaderSelectedDisabled {
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   color: #616161;
 }
@@ -8814,7 +8750,7 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 .colHeaderLabelSelectedDown,
 .colHeaderLabelSelectedOver,
 .colHeaderLabelSelectedDisabled {
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   font-weight: bold;
   color: #616161;
@@ -8856,7 +8792,7 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 .innerHeaderSelectedDown,
 .innerHeaderSelectedOver,
 .innerHeaderSelectedDisabled {
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   color: #616161;
   background-color: #f0f0f0;
@@ -8909,7 +8845,7 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 
 .chartTitle {
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: bold;
   text-align: center;
@@ -8917,21 +8853,21 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 
 .chartAxisTitle {
   color: #000080;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-weight: bold;
 }
 
 .chartValueTitle {
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
 }
 
 .chartTotal {
   background-color: linen;
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
 }
 
@@ -8939,7 +8875,7 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
   background-color: #cccccc;
   border-left: 1px solid #cccccc;
   border-right: 1px solid #cccccc;
-  border-top: 1px dashed #0000FF;
+  border-top: 1px dashed #0E42D2;
 }
 
 .chartBar1 {
@@ -8965,7 +8901,7 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 ============================================================*/
 .printHeader {
   border: 1px solid #cccccc;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-weight: bold;
 }
@@ -8997,23 +8933,23 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
   border-bottom: 1px solid #cccccc;
   border-right: 1px solid #cccccc;
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
 }
 
 /* normal cell Over state */
 .calendarOver {
-  background-color: #f0f0f0;
+  background-color: white;
   color: #3f3f3f;
 }
 
 .calendarSelected {
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
   color: #3f3f3f;
 }
 
 .calendarSelectedOver {
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
   color: #3f3f3f;
 }
 
@@ -9038,17 +8974,17 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
   border-bottom: 1px solid #cccccc;
   border-right: 1px solid #cccccc;
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
 }
 
 .calendarSelectedDark {
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
   color: #3f3f3f;
 }
 
 .calendarSelectedOverDark {
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
   color: #3f3f3f;
 }
 
@@ -9067,7 +9003,7 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
   border-bottom: 1px solid #cccccc;
   border-right: 1px solid #cccccc;
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
 }
 
@@ -9083,7 +9019,7 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
   border-bottom: 1px solid #cccccc;
   border-right: 1px solid #cccccc;
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
 }
 
@@ -9113,7 +9049,7 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
   border: 1px solid transparent;
   border-bottom: 1px solid #cccccc;
   border-right: 1px solid #cccccc;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
 }
 
@@ -9123,7 +9059,7 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 .labelColumnSelectedDark,
 .labelColumnSelectedOver,
 .labelColumnSelectedOverDark {
-  background-color: #e2e2e2;
+  background-color: #f1f1f1;
   color: #3f3f3f;
 }
 
@@ -9155,7 +9091,7 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
   border-bottom: 1px solid #cccccc;
   border-right: 1px solid #cccccc;
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
 }
 
@@ -9165,7 +9101,7 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 .calMonthDayHeaderSelectedDark,
 .calMonthDayHeaderSelectedOver,
 .calMonthDayHeaderSelectedOverDark {
-  background-color: #c0d8ec;
+  background-color: #8773db;
   color: #454545;
 }
 
@@ -9185,7 +9121,7 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
   border-bottom: 1px solid #cccccc;
   border-right: 1px solid #cccccc;
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
 }
 
@@ -9195,7 +9131,7 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 .calMonthDayBodySelectedDark,
 .calMonthDayBodySelectedOver,
 .calMonthDayBodySelectedOverDark {
-  background-color: #c0d8ec;
+  background-color: #8773db;
 }
 
 .calMonthDayBodyDisabled {
@@ -9214,14 +9150,14 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
   border-bottom: 1px solid #cccccc;
   border-right: 1px solid #cccccc;
   color: #454545;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
 }
 
 .calMonthOtherDayHeaderOver
 .calMonthOtherDayHeaderSelected,
 .calMonthOtherDayHeaderSelectedOver {
-  background-color: #c0d8ec;
+  background-color: #8773db;
 }
 
 .calMonthOtherDayBody,
@@ -9231,17 +9167,17 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
   border-bottom: 1px solid #cccccc;
   border-right: 1px solid #cccccc;
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
 }
 
 .calMonthOtherDayBodyOver,
 .calMonthOtherDayBodyOverDark {
-  background-color: #c0d8ec;
+  background-color: #8773db;
   border-bottom: 1px solid #cccccc;
   border-right: 1px solid #cccccc;
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
 }
 
@@ -9261,28 +9197,28 @@ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
   border-bottom: 1px solid #cccccc;
   border-right: 1px solid #cccccc;
   color: #454545;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
 }
 
 /* calMonthEventLink */
 a.calMonthEventLink:link {
-  color: #0000EE;
+  color: #0E42D2;
   text-decoration: none;
 }
 
 a.calMonthEventLink:visited {
-  color: #0000EE;
+  color: #0E42D2;
   text-decoration: none;
 }
 
 a.calMonthEventLink:hover {
-  color: #0000EE;
+  color: #0E42D2;
   text-decoration: underline;
 }
 
 a.calMonthEventLink:active {
-  color: #0000EE;
+  color: #0E42D2;
   text-decoration: none;
 }
 
@@ -9299,9 +9235,9 @@ a.calMonthEventLink:active {
 /* ----event window---- */
 .eventWindow,
 .eventWindowSelected {
-  background-color: #f0fbff;
-  border: 1px solid #c8e1f4;
-  font-family: RobotoLight;
+  background-color: #b796ee;
+  border: 1px solid #8f7ce3;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   padding: 1px;
   outline: none;
@@ -9318,10 +9254,10 @@ a.calMonthEventLink:active {
   right: 0px;
   top: 0px;
   height: auto;
-  background-color: #d0e6f6;
+  background-color: #9781e5;
   color: #4d4d4d;
-  border: 1px solid #d0e6f6;
-  font-family: RobotoLight;
+  border: 1px solid #9781e5;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   padding: 2px 2px 0px 2px;
 }
@@ -9333,20 +9269,20 @@ a.calMonthEventLink:active {
   right: 0px;
   bottom: 0px;
   vertical-align: top;
-  background-color: #f0fbff;
+  background-color: #b796ee;
   color: #282828;
   border: none;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   padding: 2px 2px 2px 2px;
 }
 
 .eventWindowGripper,
 .eventWindowLabel {
-  background-color: #d0e6f6;
+  background-color: #9781e5;
   color: #4d4d4d;
-  border: 1px solid #d0e6f6;
-  font-family: RobotoLight;
+  border: 1px solid #9781e5;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   padding: 2px 2px 0px 2px;
 }
@@ -9358,7 +9294,7 @@ a.calMonthEventLink:active {
 
 /* Leading/Trailing date-lines, shown either side of events in Timelines */
 .eventLine {
-  background-color: #47a7e3;
+  background-color: #0E42D2;
 }
 
 /* --- ZoneCanvas --- */
@@ -9388,7 +9324,7 @@ a.calMonthEventLink:active {
   display: inline-block;
   color: #ffffff;
   background-color: #AA0000;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
 }
 
@@ -9430,7 +9366,7 @@ a.calMonthEventLink:active {
 .propSheetValueDisabled {
   border-bottom: 1px solid #cccccc;
   border-right: 1px solid #cccccc;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   margin: 0px 2px 0px 0px;
   padding: 1px 2px 0px 2px;
@@ -9442,7 +9378,7 @@ a.calMonthEventLink:active {
   background-color: #cccccc;
   border-bottom: 1px solid #cccccc;
   border-right: 1px solid #cccccc;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   padding-left: 4px;
   padding-right: 4px;
@@ -9450,9 +9386,9 @@ a.calMonthEventLink:active {
 
 .propSheetTitleError,
 .propSheetValueError {
-  background-color: #cfd9f2;
+  background-color: #9674e1;
   color: #8f2227;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
 }
 
@@ -9460,7 +9396,7 @@ a.calMonthEventLink:active {
 .propSheetFieldDisabled {
   background-color: #ffffff;
   border: 0px;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   margin-top: 3px;
   padding: 4px 0px 4px 0px;
@@ -9471,7 +9407,7 @@ a.calMonthEventLink:active {
   background-color: #cccccc;
   border-bottom: 1px solid #cccccc;
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   font-weight: bold;
   padding: 4px;
@@ -9509,8 +9445,8 @@ a.calMonthEventLink:active {
 .paletteTreeTallCellDisabled,
 .paletteTreeTallCellDisabledDark {
   color: #616161;
-  background-color: #f0f0f0;
-  font-family: RobotoLight;
+  background-color: #ffffff;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   text-overflow: ellipsis;
 }
@@ -9525,7 +9461,7 @@ a.calMonthEventLink:active {
 .processElementNewFocused,
 .processElementNewDisabled {
   color: #282828;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
 }
 
@@ -9541,7 +9477,7 @@ a.calMonthEventLink:active {
 .processElementNew,
 .processElementNewFocused,
 .processElementNewDisabled {
-  border: 1px dashed #157fcc;
+  border: 1px dashed #001abb;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
@@ -9554,17 +9490,17 @@ a.calMonthEventLink:active {
 }
 
 .processElementHeader {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   border: none;
   border-bottom: 1px solid #d9d9d9;
 }
 
 .processElementHeaderLabel {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   color: #616161;
   top: 50%;
   transform: translateY(10%);
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 12.58px;
 }
@@ -9579,7 +9515,7 @@ a.calMonthEventLink:active {
 .notifyErrorRTL,
 .notifyMessageRTL {
   color: #ffffff;
-  font-family: calibri;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
 }
 
@@ -9771,9 +9707,9 @@ a.calMonthEventLink:active {
   color: #ffffff;
   background-color: #2f5597;
   border: 1px solid #4472c4;
-  -moz-box-shadow: 0 0 0.2em 0.1em #1f9fef;
-  -webkit-box-shadow: 0 0 0.2em 0.1em #1f9fef;
-  box-shadow: 0 0 0.2em 0.1em #1f9fef;
+  -moz-box-shadow: 0 0 0.2em 0.1em #0E42D2;
+  -webkit-box-shadow: 0 0 0.2em 0.1em #0E42D2;
+  box-shadow: 0 0 0.2em 0.1em #0E42D2;
 }
 
 /* focused styles */
@@ -9781,7 +9717,7 @@ a.calMonthEventLink:active {
 .tourButtonSelectedFocused {
   color: #ffffff;
   background-color: #4c64a6;
-  border: 1px solid #005491;
+  border: 1px solid navy;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -9793,9 +9729,9 @@ a.calMonthEventLink:active {
   color: #ffffff;
   background-color: #4c64a6;
   border: 1px solid #003760;
-  -moz-box-shadow: 0 0 5px #1f9fef;
-  -webkit-box-shadow: 0 0 5px #1f9fef;
-  box-shadow: 0 0 5px #1f9fef;
+  -moz-box-shadow: 0 0 5px #0E42D2;
+  -webkit-box-shadow: 0 0 5px #0E42D2;
+  box-shadow: 0 0 5px #0E42D2;
 }
 
 /* Down styles */
@@ -9840,7 +9776,7 @@ a.calMonthEventLink:active {
 .tourButtonPendingSelectedOver,
 .tourButtonPendingSelectedFocusedOver,
 .tourButtonPendingSelectedDisabled {
-  color: #0066cc;
+  color: #0001bb;
 }
 
 .tourLinkButton,
@@ -9904,7 +9840,7 @@ a.calMonthEventLink:active {
   background-color: transparent;
   color: #282828;
   border: 1px solid transparent;
-  font-family: RobotoLight;
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
 }
 
@@ -9979,7 +9915,7 @@ a.calMonthEventLink:active {
 /* doc viewer */
 .docHover {
   border: 1px solid #cccccc;
-  background-color: #eff9ff;
+  background-color: #b694ee;
   color: #363636;
   padding: 5px;
   -moz-border-radius: 0px;
@@ -9990,19 +9926,19 @@ a.calMonthEventLink:active {
 }
 
 .docLink:link {
-  color: #0000EE;
+  color: #0E42D2;
 }
 
 .docLink:visited {
-  color: #551A8B;
+  color: #94BFFF;
 }
 
 .docLink:active {
-  color: #EE0000;
+  color: #94BFFF;
 }
 
 .docLink:hover {
-  color: #0000EE;
+  color: #0E42D2;
 }
 
 .docMethod {
@@ -10020,3 +9956,5 @@ a.calMonthEventLink:active {
 .docOptionalParameter {
   color: gray;
 }
+
+/* Custom Style Overrides */

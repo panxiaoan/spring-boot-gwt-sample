@@ -1,6 +1,30 @@
 
 $theme_name: "Default" !default;
 
+// ==== Fonts - Variables for fonts
+// Definitions
+$primary_font: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$secondary_font: $primary_font !default;
+$secondary_font_bold: $primary_font !default;
+$tertiary_font: $primary_font !default;
+
+// Widget
+$standard_body_font: $tertiary_font !default;
+$standard_header_font: $tertiary_font !default;
+$standard_tab_font: $secondary_font !default;
+$standard_hover_font: $standard_body_font !default;
+// Font sizes
+$normal_font_size: 12px !default;
+$standard_font_size: 11px !default;
+$standard_small_font_size: 9px !default;
+$standard_header_font_size: 14px !default;
+$secondary_header_font_size: 12.58px !default;
+// Weight
+$standard_header_font_weight: bold !default;
+$standard_font_weight: normal !default;
+// Other text settings
+$standard_line_height: 22px !default;
+
 // ==== Colors - Variables for high-level Colors
 // General highlight colors (headers, rollover's, buttons, etc)
 $highlight_color: #0E42D2 !default;
@@ -10,7 +34,7 @@ $active_bgColor: #ffffff !default;
 // Standard settings
 $standard_blue: #0E42D2 !default;
 $standard_color: #282828 !default;
-$standard_bgColor: #fbfbfb !default;
+$standard_bgColor: #ffffff !default;
 $standard_border_color: #cccccc !default;
 
 // Headers
