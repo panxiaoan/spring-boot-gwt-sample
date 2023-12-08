@@ -31,22 +31,11 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
 
-        <module-name>com.pxa.sample.SpringBootGWTSample</module-name>
-        <main-class>com.pxa.sample.RunSpringBootGWTSampleApp.java</main-class>
-
-        <spring-boot.version>2.7.18</spring-boot.version>
-        <spring-boot-admin.version>2.7.14</spring-boot-admin.version>
+        <spring-boot.version>2.7.11</spring-boot.version>
+        <spring-boot-admin.version>2.7.4</spring-boot-admin.version>
 
         <gwt.version>2.10.0</gwt.version>
-        <smartgwt.version>13.0-p20231206</smartgwt.version>
-
-        <snakeyaml.version>2.0</snakeyaml.version>
-        <xnio-api.version>3.8.9.Final</xnio-api.version>
-
-        <mysql.version>8.0.32</mysql.version>
-
-        <maven-compile-plugin.version>3.10.1</maven-compile-plugin.version>
-        <gwt-maven-plugin.version>1.1.0</gwt-maven-plugin.version>
+        <smartgwt.version>13.0-p20230412</smartgwt.version>
     </properties>
 
     <dependencyManagement>
@@ -86,21 +75,21 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <!--            <exclusions>-->
-            <!--                <exclusion>-->
-            <!--                    <groupId>org.springframework.boot</groupId>-->
-            <!--                    <artifactId>spring-boot-starter-tomcat</artifactId>-->
-            <!--                </exclusion>-->
-            <!--            </exclusions>-->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.boot</groupId>-->
-        <!--            <artifactId>spring-boot-starter-undertow</artifactId>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-undertow</artifactId>
+        </dependency>
 
 
         <!-- 热更新，便于开发调试 -->
@@ -149,20 +138,20 @@
         <dependency>
             <groupId>org.yaml</groupId>
             <artifactId>snakeyaml</artifactId>
-            <version>${snakeyaml.version}</version>
+            <version>2.0</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.jboss.xnio/xnio-api -->
         <dependency>
             <groupId>org.jboss.xnio</groupId>
             <artifactId>xnio-api</artifactId>
-            <version>${xnio-api.version}</version>
+            <version>3.8.9.Final</version>
         </dependency>
 
         <!-- MySQL -->
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
-            <version>${mysql.version}</version>
+            <version>8.0.32</version>
             <scope>runtime</scope>
         </dependency>
 
@@ -199,8 +188,6 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <finalName>${project.artifactId}</finalName>
-                    <mainClass>${main-class}</mainClass>
                     <excludeGroupIds>gwt-dev</excludeGroupIds>
                 </configuration>
                 <executions>
@@ -214,7 +201,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven-compile-plugin.version}</version>
+                <version>3.10.1</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
@@ -225,7 +212,7 @@
             <plugin>
                 <groupId>net.ltgt.gwt.maven</groupId>
                 <artifactId>gwt-maven-plugin</artifactId>
-                <version>${gwt-maven-plugin.version}</version>
+                <version>1.0.1</version>
                 <extensions>true</extensions>
                 <executions>
                     <execution>
@@ -235,7 +222,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <moduleName>${module-name}</moduleName>
+                    <moduleName>com.pxa.sample.SpringBootGWTSample</moduleName>
                     <webappDirectory>src/main/resources/static</webappDirectory>
                     <launcherDir>${project.build.directory}/classes/static</launcherDir>
                     <startupUrls>
